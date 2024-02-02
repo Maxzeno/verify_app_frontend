@@ -72,10 +72,14 @@ export async function registerUser(credentials) {
 }
 
 /* login function */
-export async function verifyPassword( {email,password} ) {
+export async function verifyPassword({ email, password }) {
+    
     try {
-        if(email) {
-            const {data} = await axios.post('/api/login', { email, password } );
+        if (email) {
+            console.log(email, 'fron login oo')
+            
+            const { data,status } = await axios.post('/api/login', { email, password });
+            console.log('fron login', status, 'status', data)
             return Promise.resolve( {data} ); 
         }
     } catch (error) {

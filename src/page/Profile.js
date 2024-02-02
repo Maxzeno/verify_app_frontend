@@ -62,7 +62,7 @@ export default function Profile() {
     }
 
     if( isLoading ) {
-        return (<h1 className='text-2xl font-bold'>isLoading</h1>);
+        return (<h1 className='text-2xl font-bold'>Loading...</h1>);
     }
 
     if(serverError) {
@@ -110,7 +110,7 @@ export default function Profile() {
 
                         </div>
 
-            <FooterShortCore/>
+                        <FooterShortCore/>
                         
                     </form>
 
