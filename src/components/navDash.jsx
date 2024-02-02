@@ -14,10 +14,9 @@ import {
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import companyLogo from "../assets/images/logo-nobg.png";
-import FooterShortCore from "./FooterShortCore";
 import NavDrop from "./NavDrop";
 
-export default function NavbarCore({ children }) {
+export default function NavbarCore({ children, headerName = "Dashboard" }) {
   const [menuOpen, setMenu] = useState(null);
 
   const menuFunc = (e) => {
@@ -198,7 +197,7 @@ export default function NavbarCore({ children }) {
           <div className="overflow-auto md:col-span-4 relative w-auto">
             <nav className="py-3">
               <div className="flex justify-between px-3 md:px-6">
-                <div className="font-extrabold text-3xl">Dashboard</div>
+                <div className="font-extrabold text-3xl">{headerName}</div>
                 <div className="flex">
                   <div className="mr-5">
                     <NavDrop name={"Emma"} />
@@ -226,7 +225,6 @@ export default function NavbarCore({ children }) {
               </div>
             </nav>
             <div className="px-5 py-5">{children}</div>
-            <FooterShortCore />
           </div>
         </div>
       </div>

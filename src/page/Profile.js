@@ -8,6 +8,7 @@ import { updateUser } from '../helper/helper.js';
 import { profileValidate } from '../helper/validate.js';
 import useFetch from '../hooks/fetch.hook.js';
 
+import FooterShortCore from "../components/FooterShortCore";
 import styles from '../styles/Email.module.css';
 import extend from '../styles/Profile.module.css';
 
@@ -90,7 +91,7 @@ export default function Profile() {
                                 <img src={apiData?.profile || file || avatar} className={`${styles.profile_img} ${extend.profile_img}`} alt="avatar"></img>
                             </label>
 
-                            <input onChange={onUpload} type="file" id='profile' name='profile'></input>
+                            {/* <input onChange={onUpload} type="file" id='profile' name='profile'></input> */}
                         </div>
 
                         <div className="textbox flex flex-col items-center gap-6">
@@ -109,9 +110,8 @@ export default function Profile() {
 
                         </div>
 
-                        <div className="text-center py-4">
-                            <span className="text-gray-500">come back later? <button onClick={userLogout} className="text-red-500" to="/login"> Logout </button></span>
-                        </div>
+            <FooterShortCore/>
+                        
                     </form>
 
                 </div>

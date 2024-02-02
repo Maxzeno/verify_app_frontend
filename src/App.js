@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     },
     {
         path : '/profile',
-        element : <AuthorizeUser> <Profile /> </AuthorizeUser> 
+        element : <AuthorizeUser><NavbarCore headerName='Profile'> <Profile /> </NavbarCore></AuthorizeUser> 
     },
     {
         path : '/recovery',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     },
     {
         path : '/dashboard',
-        element : <NavbarCore><Dashboard></Dashboard> </NavbarCore>
+        element : <AuthorizeUser><NavbarCore><Dashboard></Dashboard> </NavbarCore></AuthorizeUser> 
     },
     {
         path : '*',

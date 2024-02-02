@@ -7,7 +7,18 @@ axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 /* Make API Requests */
 
+/* to get email from Token */
+export async function getEmail() {
+    const token = localStorage.getItem('token');
 
+    if(!token) {
+        return Promise.reject("Cannot find Token");
+    }
+
+    const decode = jwt_decode(token);
+    // console.log(decode);
+    return decode;
+}
 
 /* to get username from Token */
 export async function getUsername() {
