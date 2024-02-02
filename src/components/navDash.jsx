@@ -1,17 +1,4 @@
 import { useState } from "react";
-import {
-  BarChartLine,
-  CurrencyDollar,
-  Cursor,
-  Diagram2,
-  Envelope,
-  GraphUp,
-  Image,
-  Link45deg,
-  People,
-  PinMap,
-  Speedometer2,
-} from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import companyLogo from "../assets/images/logo-nobg.png";
 import NavDrop from "./NavDrop";
@@ -34,16 +21,16 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
           <div
             className={`overflow-auto transition-left duration-300 ease-in-out transform bg-white border-r md:col-span-2 lg:col-span-1 z-10 w-[300px] ${
               menuOpen != true && "left-[-300px]"
-            } md:left-0 h-[calc(100vh)] md:relative md:w-auto md:min-w-[auto] fixed`}
+            } md:left-0 h-[calc(100vh)] md:relative md:w-auto md:min-w-[auto] fixed text-gray-600 text-base`}
           >
             <div>
               <div className="px-3 md:px-4 pt-4">
-                <div className="mb-4">
+                <div className="mb-7">
                   <Link to="/dashboard">
                     <img src={companyLogo} alt="Logo" width={150} height={37} />
                   </Link>
                 </div>
-                <div className="my-4">
+                <div className="my-4 pl-2">
                   <Link
                     onClick={menuFunc}
                     to="/dashboard"
@@ -51,132 +38,10 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                       true && "text-blue-500 hover:text-blue-400"
                     }`}
                   >
-                    <Speedometer2 className="text-[1.3em] leading-[0] mr-3" />
                     Dashboard
                   </Link>
                 </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/link"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <Link45deg className="text-[1.3em] leading-[0] mr-3" />
-                    Create Link
-                  </Link>
-                </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/supporters"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <People className="text-[1.3em] leading-[0] mr-3" />
-                    Supporters
-                  </Link>
-                </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/email"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <Envelope className="text-[1.3em] leading-[0] mr-3" />
-                    Email
-                  </Link>
-                </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/statistics"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <GraphUp className="text-[1.3em] leading-[0] mr-3" />
-                    Statistics
-                  </Link>
-                </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/withdraw"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <CurrencyDollar className="text-[1.3em] leading-[0] mr-3" />
-                    Withdraw
-                  </Link>
-                </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/referrals"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <People className="text-[1.3em] leading-[0] mr-3" />
-                    Referrals
-                  </Link>
-                </div>
-                <div className="my-4">OTHERS</div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/affiliate"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <Diagram2 className="text-[1.3em] leading-[0] mr-3" />
-                    Affiliate
-                  </Link>
-                </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/socials"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <Cursor className="text-[1.3em] leading-[0] mr-3" />
-                    Social media
-                  </Link>
-                </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/pixel"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <PinMap className="text-[1.3em] leading-[0] mr-3" />
-                    Pixel
-                  </Link>
-                </div>
-                <div className="my-4">
-                  <Link
-                    onClick={menuFunc}
-                    to="/analytics"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
-                    }`}
-                  >
-                    <BarChartLine className="text-[1.3em] leading-[0] mr-3" />
-                    Analytics
-                  </Link>
-                </div>
-                <div className="my-4">
+                <div className="my-4 pl-2">
                   <Link
                     onClick={menuFunc}
                     to="#"
@@ -184,16 +49,81 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                       false && "text-blue-500 hover:text-blue-400"
                     }`}
                   >
-                    <Image className="text-[1.3em] leading-[0] mr-3" />
-                    NFT
-                    <span className="bg-blue-500 text-white rounded-lg text-xs ml-2 p-1 leading-none">
-                      soon
-                    </span>
+                    Fund Wallet
+                  </Link>
+                </div>
+                <div className="my-4 pl-2">
+                  <Link
+                    onClick={menuFunc}
+                    to="#"
+                    className={`my-nav-link-light flex  ${
+                      false && "text-blue-500 hover:text-blue-400"
+                    }`}
+                  >
+                    Verification History
+                  </Link>
+                </div>
+                <div className="my-4 pl-2">
+                  <Link
+                    onClick={menuFunc}
+                    to="#"
+                    className={`my-nav-link-light flex  ${
+                      false && "text-blue-500 hover:text-blue-400"
+                    }`}
+                  >
+                    Payment History
+                  </Link>
+                </div>
+
+                <div className="my-5 text-black">ID Services</div>
+                <div className="my-4 pl-2">
+                  <Link
+                    onClick={menuFunc}
+                    to="#"
+                    className={`my-nav-link-light flex  ${
+                      false && "text-blue-500 hover:text-blue-400"
+                    }`}
+                  >
+                    NIN Verification
+                  </Link>
+                </div>
+                <div className="my-4 pl-2">
+                  <Link
+                    onClick={menuFunc}
+                    to="#"
+                    className={`my-nav-link-light flex  ${
+                      false && "text-blue-500 hover:text-blue-400"
+                    }`}
+                  >
+                    NIN Validation
+                  </Link>
+                </div>
+                <div className="my-4 pl-2">
+                  <Link
+                    onClick={menuFunc}
+                    to="#"
+                    className={`my-nav-link-light flex  ${
+                      false && "text-blue-500 hover:text-blue-400"
+                    }`}
+                  >
+                    BVN Verification
+                  </Link>
+                </div>
+                <div className="my-4 pl-2">
+                  <Link
+                    onClick={menuFunc}
+                    to="#"
+                    className={`my-nav-link-light flex  ${
+                      false && "text-blue-500 hover:text-blue-400"
+                    }`}
+                  >
+                    Driver Licence
                   </Link>
                 </div>
               </div>
             </div>
           </div>
+
           <div className="overflow-auto md:col-span-4 relative w-auto">
             <nav className="py-3">
               <div className="flex justify-between px-3 md:px-6">
