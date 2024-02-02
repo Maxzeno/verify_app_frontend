@@ -11,6 +11,7 @@ import Reset from './page/Reset.js';
 
 
 /* auth middleware */
+import NavbarCore from './components/navDash.jsx';
 import { AuthorizeUser, ProtectRoute } from './middleware/auth.js';
 import Dashboard from './page/dashboard.js';
 import Email from './page/Email.js';
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
     },
     {
         path : '/dashboard',
-        element : <Dashboard></Dashboard>
+        element : <NavbarCore><Dashboard></Dashboard> </NavbarCore>
     },
     {
         path : '*',

@@ -57,7 +57,7 @@ export default function Profile() {
     // logout handler function
     function userLogout() {
         localStorage.removeItem('token');
-        navigate('/');
+        navigate('/login');
     }
 
     if( isLoading ) {
@@ -110,7 +110,7 @@ export default function Profile() {
                         </div>
 
                         <div className="text-center py-4">
-                            <span className="text-gray-500">come back later? <button onClick={userLogout} className="text-red-500" to="/"> Logout </button></span>
+                            <span className="text-gray-500">come back later? <button onClick={userLogout} className="text-red-500" to="/login"> Logout </button></span>
                         </div>
                     </form>
 

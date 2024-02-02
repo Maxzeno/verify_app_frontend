@@ -38,8 +38,8 @@ export default function Register() {
             });
 
             registerPromise.then(() => {
-                console.log('Registration successful! Navigating to the home page.');
-                navigate('/');
+                console.log('Registration successful! Navigating to the login page.');
+                navigate('/login');
             }).catch(error => {
                 console.error('Error during registration:', error);
             });
