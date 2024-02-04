@@ -19,7 +19,7 @@ function NavDrop({ name }) {
   return (
     <div className="relative z-20">
       <div
-        className="mx-2 flex justify-center items-center cursor-pointer border-gray-700 border-2 rounded-full"
+        className="flex justify-center items-center cursor-pointer border-gray-700 border-2 rounded-full"
         onClick={handleSelect}
       >
         <img

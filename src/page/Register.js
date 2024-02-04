@@ -7,7 +7,7 @@ import convertToBase64 from '../helper/convert.js';
 import { registerUser } from '../helper/helper.js';
 import { registerValidate } from '../helper/validate.js';
 
-import styles from '../styles/Email.module.css';
+import styles from '../styles/Main.module.css';
 
 
 export default function Register() {

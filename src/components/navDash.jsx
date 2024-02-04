@@ -21,7 +21,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
           <div
             className={`overflow-auto transition-left duration-300 ease-in-out transform bg-white border-r md:col-span-2 lg:col-span-1 z-10 w-[300px] ${
               menuOpen != true && "left-[-300px]"
-            } md:left-0 h-[calc(100vh)] md:relative md:w-auto md:min-w-[auto] fixed text-gray-600 text-base  border-r-1 border-gray-300`}
+            } md:left-0 h-[calc(100vh)] md:relative md:w-auto md:min-w-[auto] fixed text-gray-600 text-base border-r-1 border-gray-300`}
           >
             <div>
               <div className="px-3 md:px-4 pt-4">
@@ -30,45 +30,45 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     <img src={companyLogo} alt="Logo" width={150} height={37} />
                   </Link>
                 </div>
-                <div className="my-4 pl-2">
+                <div>
                   <Link
                     onClick={menuFunc}
                     to="/dashboard"
-                    className={`my-nav-link-light flex ${
-                      true && "text-blue-500 hover:text-blue-400"
+                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex ${
+                      true && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     Dashboard
                   </Link>
                 </div>
-                <div className="my-4 pl-2">
+                <div>
                   <Link
                     onClick={menuFunc}
                     to="#"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
+                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
+                      false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     Fund Wallet
                   </Link>
                 </div>
-                <div className="my-4 pl-2">
+                <div>
                   <Link
                     onClick={menuFunc}
                     to="#"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
+                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
+                      false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     Verification History
                   </Link>
                 </div>
-                <div className="my-4 pl-2">
+                <div>
                   <Link
                     onClick={menuFunc}
                     to="#"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
+                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
+                      false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     Payment History
@@ -76,45 +76,45 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                 </div>
 
                 <div className="my-5 text-black">ID Services</div>
-                <div className="my-4 pl-2">
+                <div>
                   <Link
                     onClick={menuFunc}
                     to="#"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
+                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
+                      false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     NIN Verification
                   </Link>
                 </div>
-                <div className="my-4 pl-2">
+                <div>
                   <Link
                     onClick={menuFunc}
                     to="#"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
+                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
+                      false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     NIN Validation
                   </Link>
                 </div>
-                <div className="my-4 pl-2">
+                <div>
                   <Link
                     onClick={menuFunc}
                     to="#"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
+                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
+                      false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     BVN Verification
                   </Link>
                 </div>
-                <div className="my-4 pl-2">
+                <div>
                   <Link
                     onClick={menuFunc}
                     to="#"
-                    className={`my-nav-link-light flex  ${
-                      false && "text-blue-500 hover:text-blue-400"
+                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
+                      false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     Driver Licence
@@ -126,10 +126,10 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
 
           <div className="overflow-auto md:col-span-4 relative w-auto bg-gray-200">
             <nav className="py-3">
-              <div className="flex justify-between px-3 md:px-6">
+              <div className="flex justify-between px-5">
                 <div className="font-extrabold text-3xl">{headerName}</div>
                 <div className="flex">
-                  <div className="mr-5">
+                  <div>
                     <NavDrop name={"Emma"} />
                   </div>
                   <button
@@ -154,7 +154,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                 </div>
               </div>
             </nav>
-            <div className="px-5 py-5">{children}</div>
+            <div className="px-5s py-5s">{children}</div>
           </div>
         </div>
       </div>

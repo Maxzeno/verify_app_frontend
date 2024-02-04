@@ -1,15 +1,13 @@
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
 import avatar from '../assets/profile.png';
-import convertToBase64 from '../helper/convert.js';
 import { updateUser } from '../helper/helper.js';
 import { profileValidate } from '../helper/validate.js';
 import useFetch from '../hooks/fetch.hook.js';
 
 import FooterShortCore from "../components/FooterShortCore";
-import styles from '../styles/Email.module.css';
+import styles from '../styles/Main.module.css';
 import extend from '../styles/Profile.module.css';
 
 
@@ -19,7 +17,7 @@ export default function Profile() {
 
     const [ {isLoading, apiData, serverError} ] = useFetch();
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const formik = useFormik({
         initialValues: {
@@ -50,16 +48,11 @@ export default function Profile() {
     });
 
     /* formik doesn't support file upload so we need to create this handler */
-    const onUpload = async e => {
-        const base64 = await convertToBase64(e.target.files[0]);
-        setFile(base64);
-    }
+    // const onUpload = async e => {
+    //     const base64 = await convertToBase64(e.target.files[0]);
+    //     setFile(base64);
+    // }
 
-    // logout handler function
-    function userLogout() {
-        localStorage.removeItem('token');
-        navigate('/login');
-    }
 
     if( isLoading ) {
         return (<h1 className='text-2xl font-bold'>Loading...</h1>);
@@ -71,7 +64,7 @@ export default function Profile() {
 
     // rendering the profile component
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto px-5 py-5">
 
             <Toaster position='top-center' reverseOrder={false}></Toaster>
 

@@ -11,9 +11,9 @@ import Reset from './page/Reset.js';
 
 
 /* auth middleware */
-import NavbarCore from './components/navDash.jsx';
+import NavbarCore from './components/NavDash.jsx';
 import { AuthorizeUser, ProtectRoute } from './middleware/auth.js';
-import Dashboard from './page/dashboard.js';
+import Dashboard from './page/Dashboard.js';
 import Email from './page/Email.js';
 import Home from './page/Home.js';
 

@@ -7,7 +7,7 @@ import { resetPasswordValidate } from '../helper/validate.js';
 import useFetch from '../hooks/fetch.hook.js';
 import { useAuthStore } from '../store/store.js';
 
-import styles from '../styles/Email.module.css';
+import styles from '../styles/Main.module.css';
 
 export default function Reset() {
 

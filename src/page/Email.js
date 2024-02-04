@@ -7,7 +7,7 @@ import avatar from '../assets/profile.png';
 import { emailValidate } from '../helper/validate.js';
 import { useAuthStore } from '../store/store.js';
 
-import styles from '../styles/Email.module.css';
+import styles from '../styles/Main.module.css';
 
 export default function Email() {
 
