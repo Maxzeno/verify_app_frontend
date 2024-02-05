@@ -45,7 +45,7 @@ export async function resetPasswordValidate(values) {
     const errors = passwordVerify({}, values);
 
     if( values.password != values.confirm_pwd ) {
-        errors.exist = toast.error("Password not match...!");
+        errors.exist = toast.error("Password does not match...!");
     }
 
     return errors;

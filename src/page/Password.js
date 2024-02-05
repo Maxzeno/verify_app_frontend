@@ -27,21 +27,22 @@ export default function Password() {
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit: async values => {
-            console.log(values);
-
-            const loginPromise = verifyPassword( { email, password: values.password } );
+            const sendIt = verifyPassword({ email, password: values.password });
             
-            toast.promise(loginPromise, {
-                loading: 'Checking...!',
+            toast.promise(sendIt, {
+                loading: 'Loading...!',
                 success: <b>Login Successfully...!</b>,
-                error: <b>Password Not Match!</b>
+                error: (error) => <b>{error.error}</b>
             });
 
-            loginPromise.then(res => {
-                const { token } = res.data;
+            sendIt.then((result) => {
+                const { token } = result.data;
                 localStorage.setItem('token', token);
                 navigate('/dashboard');
-            });
+                
+            }).catch((err) => {
+                console.log(err)
+            }); 
         }
     });
 

@@ -27,22 +27,21 @@ export default function Register() {
         validateOnChange: false,
         onSubmit: async values => {
             values = await Object.assign(values, { profile : file || '' });
-            console.log(values);
 
-            const registerPromise = registerUser(values);
-
-            toast.promise(registerPromise, {
-                loading: 'Creating...',
-                success: <b>Register Successfully...!</b>,
-                error: <b>Could not Register..!</b>
+            const sendIt = registerUser(values);
+            
+            toast.promise(sendIt, {
+                loading: 'Creating...!',
+                success: <b>Registration Successfully...!</b>,
+                error: (error) => <b>{error.error}</b>
             });
 
-            registerPromise.then(() => {
-                console.log('Registration successful! Navigating to the login page.');
+            sendIt.then((result) => {
                 navigate('/login');
-            }).catch(error => {
-                console.error('Error during registration:', error);
-            });
+                
+            }).catch((err) => {
+                console.log(err)
+            });   
         }
     });
 

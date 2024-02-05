@@ -35,23 +35,20 @@ export default function Recovery() {
                 toast.success('Verify Successfully!');
                 return navigate('/reset');
             }
-        } catch(error) {
-            return toast.error('Wrong OTP! Check email again!');
+        } catch (error) {
+            return toast.error(error.error);
         }
     }
 
     // handler function of resend OTP
     function resendOTP() {
-        const sendPromise = generateOTP(email);
 
-        toast.promise(sendPromise, {
-            loading: 'Sending...',
+        const sendIt =  generateOTP(email);
+        
+        toast.promise(sendIt, {
+            loading: 'Sending...!',
             success: <b>OTP has been send to your email!</b>,
-            error: <b>Could not Send it!</b>
-        });
-
-        sendPromise.then(OTP => {
-            console.log(OTP);
+            error: (error) => <b>{error.error}</b>
         });
     }
 

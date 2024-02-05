@@ -26,19 +26,21 @@ export default function Reset() {
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit: async values => {
-            console.log(values);
 
-            const resetPromise = resetPassword( { email, password: values.password } );
-
-            toast.promise(resetPromise, {
-                loading: 'Updating...',
+            const sendIt =  resetPassword( { email, password: values.password } );
+            
+            toast.promise(sendIt, {
+                loading: 'Loading...!',
                 success: <b>Reset Successfully...!</b>,
-                error: <b>Could not Reset!</b>
+                error: (error) => <b>{error.error}</b>
             });
 
-            resetPromise.then(function() {
+            sendIt.then((result) => {
                 navigate('/password');
-            });
+                
+            }).catch((err) => {
+                console.log(err)
+            });  
         }
     });
 

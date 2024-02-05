@@ -39,10 +39,9 @@ export default function Profile() {
             toast.promise(updatePromise, {
                 loading: 'Updating...!',
                 success: <b>Updated Successfully...!</b>,
-                error: <b>Could not Update!</b>
+                error: (error) => <b>{error.error}</b>
             });
 
-            console.log(values);
 
         }
     });

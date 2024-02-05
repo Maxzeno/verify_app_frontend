@@ -1,9 +1,9 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
+import { requestErrorResolver } from './utils';
 
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
-
 
 /* Make API Requests */
 
@@ -49,7 +49,7 @@ export async function getUser( {username} ) {
         const { data } = await axios.get(`/api/user/${username}`);
         return { data };
     } catch (error) {
-        return { error: "Username doesn't Match...!"};
+        return requestErrorResolver(error)
     }
 }
 
@@ -67,24 +67,23 @@ export async function registerUser(credentials) {
 
         return Promise.resolve(msg);
     } catch (error) {
-        return Promise.reject({error});
+        return requestErrorResolver(error)
     }
 }
 
 /* login function */
 export async function verifyPassword({ email, password }) {
-    
-    try {
-        if (email) {
-            console.log(email, 'fron login oo')
-            
-            const { data,status } = await axios.post('/api/login', { email, password });
-            console.log('fron login', status, 'status', data)
-            return Promise.resolve( {data} ); 
-        }
-    } catch (error) {
-        return Promise.reject( {error: "Password doesn't Match...!"} );
+  try {
+    if (email) {
+        const { data, status } = await axios.post('/api/login', { email, password });
+        console.log(data, status )
+      return Promise.resolve({ data });
+    } else {
+      return Promise.reject({ error: "Email is required" });
     }
+  } catch (error) {
+        return requestErrorResolver(error)
+  }
 }
 
 /* update user profile function */
@@ -96,7 +95,7 @@ export async function updateUser(response) {
 
         return Promise.resolve( {data} );
     } catch (error) {
-        return Promise.reject( { error: "Couldn't Update Profile...!" } );
+        return requestErrorResolver(error)
     }
 }
 
@@ -116,7 +115,7 @@ export async function generateOTP(email) {
 
         return Promise.resolve(code);
     } catch (error) {
-        return Promise.reject( { error } );
+        return requestErrorResolver(error)
     }
 }
 
@@ -127,7 +126,7 @@ export async function verifyOTP( { email, code } ) {
 
         return { data, status };
     } catch (error) {
-        return Promise.reject(error);
+        return requestErrorResolver(error)
     }
 }
 
@@ -138,7 +137,7 @@ export async function resetPassword( { email, password } ) {
         
         return Promise.resolve( { data, status } );
     } catch (error) {
-        return Promise.reject({error});
+        return requestErrorResolver(error)
     }
 }
 
