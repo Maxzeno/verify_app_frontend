@@ -9,27 +9,27 @@ import styles from '../styles/Main.module.css';
 
 export default function Recovery() {
 
-    const { username } = useAuthStore(state => state.auth);
+    const { email } = useAuthStore(state => state.auth);
 
     const [ OTP, setOTP ] = useState();
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        generateOTP(username).then((OTP) => {
+        generateOTP(email).then((OTP) => {
             console.log(OTP);
             if(OTP) {
                 return toast.success('OTP has been sent to yout email!');
             }
             return toast.error('Problem while generating OTP!');
         })
-    }, [ username ]);
+    }, [ email ]);
 
     async function onSubmit(e) {
         e.preventDefault();
  
         try {
-            const { status } = await verifyOTP( { username, code: OTP } );
+            const { status } = await verifyOTP( { email, code: OTP } );
 
             if( status === 201 ) {
                 toast.success('Verify Successfully!');
@@ -42,7 +42,7 @@ export default function Recovery() {
 
     // handler function of resend OTP
     function resendOTP() {
-        const sendPromise = generateOTP(username);
+        const sendPromise = generateOTP(email);
 
         toast.promise(sendPromise, {
             loading: 'Sending...',

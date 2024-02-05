@@ -95,7 +95,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                       false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
-                    NIN Validation
+                    Phone Verification
                   </Link>
                 </div>
                 <div>
@@ -106,10 +106,10 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                       false && "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
-                    BVN Verification
+                    Demo Data Verification
                   </Link>
                 </div>
-                <div>
+                {/* <div>
                   <Link
                     onClick={menuFunc}
                     to="#"
@@ -119,7 +119,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                   >
                     Driver Licence
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     <NavDrop name={"Emma"} />
                   </div>
                   <button
-                    className="md:hidden rounded border border-zinc-600 hover:border-white"
+                    className="md:hidden rounded border-2 border-zinc-600 hover:border-zinc-500 ml-3"
                     onClick={menuFunc}
                   >
                     <svg

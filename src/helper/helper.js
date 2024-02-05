@@ -101,13 +101,13 @@ export async function updateUser(response) {
 }
 
 /* generate OTP */
-export async function generateOTP(username) {
+export async function generateOTP(email) {
     try {
-        const { data : { code }, status} = await axios.get('/api/generateOTP', { params : { username } } );
+        const { data : { code }, status} = await axios.get('/api/generateOTP', { params : { email } } );
 
         // send mail with the OTP
         if( status === 201 ) {
-            const { data : { email } } = await getUser( {username} );
+            const { data : { username } } = await getUser( {username: email} );
 
             const text = `Your Password Recovery OTP is ${code}. Verify and recover your password`;
 
@@ -121,9 +121,9 @@ export async function generateOTP(username) {
 }
 
 /* verify OTP */
-export async function verifyOTP( { username, code } ) {
+export async function verifyOTP( { email, code } ) {
     try {
-        const { data, status } = await axios.get('/api/verifyOTP', { params: { username, code }});
+        const { data, status } = await axios.get('/api/verifyOTP', { params: { email, code }});
 
         return { data, status };
     } catch (error) {

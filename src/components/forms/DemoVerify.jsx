@@ -1,10 +1,13 @@
 import { useFormik } from "formik";
 import styles from "../../styles/Main.module.css";
 
-export default function NINVerify() {
+export default function DemoVerify() {
   const formik = useFormik({
     initialValues: {
-      nin: "",
+      firstName: "",
+      lastName: "",
+      gender: "",
+      birthDay: "",
       slip: "",
     },
     enableReinitialize: true,
@@ -30,16 +33,34 @@ export default function NINVerify() {
   });
   return (
     <div className="p-10 bg-white rounded-lg">
-      <div className="font-thin text-2xl">NIN Verification: By NIN</div>
+      <div className="font-thin text-2xl">NIN Verification: By Demo Data</div>
       <div className="font-thin text-sm pt-4">Charge: ₦150 + Slip charge</div>
 
       <form className="pt-7" onSubmit={formik.handleSubmit}>
         <div className="textbox">
           <input
-            {...formik.getFieldProps("nin")}
+            {...formik.getFieldProps("firstName")}
             className={`${styles.textbox_full} w-full`}
             type="text"
-            placeholder="NIN"
+            placeholder="First name"
+          ></input>
+          <input
+            {...formik.getFieldProps("lastName")}
+            className={`${styles.textbox_full} w-full mt-5`}
+            type="text"
+            placeholder="Last name"
+          ></input>
+          <input
+            {...formik.getFieldProps("gender")}
+            className={`${styles.textbox_full} w-full mt-5`}
+            type="text"
+            placeholder="Gender"
+          ></input>
+          <input
+            {...formik.getFieldProps("birthDay")}
+            className={`${styles.textbox_full} w-full mt-5`}
+            type="date"
+            placeholder="Birth Day"
           ></input>
           <select
             {...formik.getFieldProps("slip")}

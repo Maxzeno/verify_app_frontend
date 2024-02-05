@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import styles from "../../styles/Main.module.css";
 
-export default function NINVerify() {
+export default function PhoneVerify() {
   const formik = useFormik({
     initialValues: {
       nin: "",
@@ -30,7 +30,7 @@ export default function NINVerify() {
   });
   return (
     <div className="p-10 bg-white rounded-lg">
-      <div className="font-thin text-2xl">NIN Verification: By NIN</div>
+      <div className="font-thin text-2xl">NIN Verification: By Phone</div>
       <div className="font-thin text-sm pt-4">Charge: ₦150 + Slip charge</div>
 
       <form className="pt-7" onSubmit={formik.handleSubmit}>
@@ -39,7 +39,7 @@ export default function NINVerify() {
             {...formik.getFieldProps("nin")}
             className={`${styles.textbox_full} w-full`}
             type="text"
-            placeholder="NIN"
+            placeholder="Phone number eg. 08082345678"
           ></input>
           <select
             {...formik.getFieldProps("slip")}

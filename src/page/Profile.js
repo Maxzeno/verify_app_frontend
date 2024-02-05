@@ -64,11 +64,11 @@ export default function Profile() {
 
     // rendering the profile component
     return (
-        <div className="container mx-auto px-5 py-5">
+        <div className="container mx-auto px-5 py-5 overflow-x-hidden overflow-y-visible">
 
             <Toaster position='top-center' reverseOrder={false}></Toaster>
 
-            <div className="flex flex-col justify-center items-center h-screen">
+            <div className="flex flex-col justify-center items-center">
                 <div className={`${styles.glass} ${extend.glass}`} style={{ width: "40%", height: "100%", paddingTop: '3em' }}>
 
                     <div className="title flex flex-col items-center">
@@ -103,12 +103,13 @@ export default function Profile() {
 
                         </div>
 
-                        <FooterShortCore/>
                         
                     </form>
 
                 </div>
             </div>
+                        <FooterShortCore/>
+
         </div>
     );
 
