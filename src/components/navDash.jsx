@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import companyLogo from "../assets/images/logo-nobg.png";
+import whatsappLogo from "../assets/whatsapp_icon.png";
 import NavDrop from "./NavDrop";
 
 export default function NavbarCore({ children, headerName = "Dashboard" }) {
@@ -20,6 +21,14 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
   return (
     <>
       <div className="relative">
+        <div className="fixed bottom-5 right-5 lg:right-10 z-10">
+          <Link
+            to="https://chat.whatsapp.com/whatsappgroup"
+            className="text-indigo-500 hover:text-[#ff6a6a]"
+          >
+            <img src={whatsappLogo} alt="Logo" width={50} height={50} />
+          </Link>
+        </div>
         <div className="z-10 md:overflow-auto md:grid md:grid-cols-6 lg:grid-cols-5 md:h-screen">
           <div
             className={`overflow-auto transition-left duration-300 ease-in-out transform bg-white border-r md:col-span-2 lg:col-span-1 z-10 w-[300px] ${

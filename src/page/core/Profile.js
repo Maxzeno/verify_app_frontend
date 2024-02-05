@@ -93,7 +93,7 @@ export default function Profile() {
                                 <input {...formik.getFieldProps('mobile')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Mobile No.'></input>
                                 <input {...formik.getFieldProps('businessId')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Business Id'></input>
                             </div>
-                            <input {...formik.getFieldProps('address')} className={`${styles.textbox_full} lg:w-[calc(100%-60px)]`} type="text" placeholder='Address'></input>
+                            <input {...formik.getFieldProps('address')} className={`${styles.textbox_full} lg:w-[calc(100%-18vw)]`} type="text" placeholder='Address'></input>
                             
                             <button className={styles.btn} type="submit">Update</button>
 

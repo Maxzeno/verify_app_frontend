@@ -2,12 +2,21 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import companyLogo from "../assets/images/logo-nobg.png";
+import whatsappLogo from "../assets/whatsapp_icon.png";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <nav className="relative container mx-auto p-6">
+      <div className="fixed bottom-5 right-5 lg:right-10 z-10">
+        <Link
+          to="https://chat.whatsapp.com/whatsappgroup"
+          className="text-indigo-500 hover:text-[#ff6a6a]"
+        >
+          <img src={whatsappLogo} alt="Logo" width={50} height={50} />
+        </Link>
+      </div>
       {/* Flex Container */}
       <div className="flex items-center justify-between">
         {/* Logo */}

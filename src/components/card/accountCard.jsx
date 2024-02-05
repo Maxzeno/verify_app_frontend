@@ -18,7 +18,10 @@ export default function AccountCard() {
         PLEASE JOIN VERIFIER
       </div>
       <div className="font-thin text-1xl pt-2">
-        <Link to="/lgoo" className="text-indigo-500 hover:text-[#ff6a6a]">
+        <Link
+          to="https://chat.whatsapp.com/whatsappgroup"
+          className="text-indigo-500 hover:text-[#ff6a6a]"
+        >
           WHATSAPP GROUP
         </Link>
       </div>
