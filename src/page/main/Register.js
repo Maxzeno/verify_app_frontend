@@ -2,12 +2,12 @@ import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
-import avatar from '../assets/profile.png';
-import convertToBase64 from '../helper/convert.js';
-import { registerUser } from '../helper/helper.js';
-import { registerValidate } from '../helper/validate.js';
+import avatar from '../../assets/profile.png';
+import convertToBase64 from '../../helper/convert.js';
+import { registerUser } from '../../helper/helper.js';
+import { registerValidate } from '../../helper/validate.js';
 
-import styles from '../styles/Main.module.css';
+import styles from '../../styles/Main.module.css';
 
 
 export default function Register() {

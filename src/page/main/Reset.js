@@ -2,12 +2,12 @@ import { useFormik } from 'formik';
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { resetPassword } from '../helper/helper.js';
-import { resetPasswordValidate } from '../helper/validate.js';
-import useFetch from '../hooks/fetch.hook.js';
-import { useAuthStore } from '../store/store.js';
+import { resetPassword } from '../../helper/helper.js';
+import { resetPasswordValidate } from '../../helper/validate.js';
+import useFetch from '../../hooks/fetch.hook.js';
+import { useAuthStore } from '../../store/store.js';
 
-import styles from '../styles/Main.module.css';
+import styles from '../../styles/Main.module.css';
 
 export default function Reset() {
 

@@ -3,11 +3,11 @@ import { useFormik } from 'formik';
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
-import avatar from '../assets/profile.png';
-import { emailValidate } from '../helper/validate.js';
-import { useAuthStore } from '../store/store.js';
+import avatar from '../../assets/profile.png';
+import { emailValidate } from '../../helper/validate.js';
+import { useAuthStore } from '../../store/store.js';
 
-import styles from '../styles/Main.module.css';
+import styles from '../../styles/Main.module.css';
 
 export default function Email() {
 

@@ -1,14 +1,14 @@
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import avatar from '../assets/profile.png';
-import { updateUser } from '../helper/helper.js';
-import { profileValidate } from '../helper/validate.js';
-import useFetch from '../hooks/fetch.hook.js';
+import avatar from '../../assets/profile.png';
+import { updateUser } from '../../helper/helper.js';
+import { profileValidate } from '../../helper/validate.js';
+import useFetch from '../../hooks/fetch.hook.js';
 
-import FooterShortCore from "../components/FooterShortCore";
-import styles from '../styles/Main.module.css';
-import extend from '../styles/Profile.module.css';
+import FooterShortCore from "../../components/FooterShortCore.jsx";
+import styles from '../../styles/Main.module.css';
+import extend from '../../styles/Profile.module.css';
 
 
 export default function Profile() {

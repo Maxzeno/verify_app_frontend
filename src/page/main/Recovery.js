@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { generateOTP, verifyOTP } from '../helper/helper.js';
-import { useAuthStore } from '../store/store.js';
+import { generateOTP, verifyOTP } from '../../helper/helper.js';
+import { useAuthStore } from '../../store/store.js';
 
-import styles from '../styles/Main.module.css';
+import styles from '../../styles/Main.module.css';
 
 
 export default function Recovery() {

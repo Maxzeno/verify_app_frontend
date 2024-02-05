@@ -2,20 +2,21 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 /* import all components */
-import PageNotFound from './page/PageNotFound.js';
-import Password from './page/Password.js';
-import Profile from './page/Profile.js';
-import Recovery from './page/Recovery.js';
-import Register from './page/Register.js';
-import Reset from './page/Reset.js';
+import Profile from './page/core/Profile.js';
+import PageNotFound from './page/main/PageNotFound.js';
+import Password from './page/main/Password.js';
+import Recovery from './page/main/Recovery.js';
+import Register from './page/main/Register.js';
+import Reset from './page/main/Reset.js';
 
 
 /* auth middleware */
 import NavbarCore from './components/NavDash.jsx';
 import { AuthorizeUser, ProtectRoute } from './middleware/auth.js';
-import Dashboard from './page/Dashboard.js';
-import Email from './page/Email.js';
-import Home from './page/Home.js';
+import Dashboard from './page/core/Dashboard.js';
+import FundWallet from './page/core/fundWallet.jsx';
+import Email from './page/main/Email.js';
+import Home from './page/main/Home.js';
 
 
 /* root routes */
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
     {
         path : '/dashboard',
         element : <AuthorizeUser><NavbarCore><Dashboard></Dashboard> </NavbarCore></AuthorizeUser> 
+    },
+    {
+        path : '/fund-wallet',
+        element : <AuthorizeUser><NavbarCore headerName='Fund Wallet'><FundWallet></FundWallet> </NavbarCore></AuthorizeUser> 
     },
     {
         path : '*',

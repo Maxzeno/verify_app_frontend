@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import companyLogo from "../assets/images/logo-nobg.png";
 import NavDrop from "./NavDrop";
 
 export default function NavbarCore({ children, headerName = "Dashboard" }) {
+  const location = useLocation();
+  const currentUrl = location.pathname;
+
   const [menuOpen, setMenu] = useState(null);
 
   const menuFunc = (e) => {
@@ -35,7 +38,8 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     onClick={menuFunc}
                     to="/dashboard"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex ${
-                      true && "bg-blue-500 hover:bg-blue-400 text-white"
+                      currentUrl.includes("/dashboard") &&
+                      "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     Dashboard
@@ -44,9 +48,10 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                 <div>
                   <Link
                     onClick={menuFunc}
-                    to="#"
+                    to="/fund-wallet"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false && "bg-blue-500 hover:bg-blue-400 text-white"
+                      currentUrl.includes("/fund-wallet") &&
+                      "bg-blue-500 hover:bg-blue-400 text-white"
                     }`}
                   >
                     Fund Wallet

@@ -2,13 +2,13 @@ import { useFormik } from 'formik';
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
-import avatar from '../assets/profile.png';
-import { verifyPassword } from '../helper/helper.js';
-import { passwordValidate } from '../helper/validate.js';
-import useFetch from '../hooks/fetch.hook.js';
-import { useAuthStore } from '../store/store.js';
+import avatar from '../../assets/profile.png';
+import { verifyPassword } from '../../helper/helper.js';
+import { passwordValidate } from '../../helper/validate.js';
+import useFetch from '../../hooks/fetch.hook.js';
+import { useAuthStore } from '../../store/store.js';
 
-import styles from '../styles/Main.module.css';
+import styles from '../../styles/Main.module.css';
 
 
 export default function Password() {
