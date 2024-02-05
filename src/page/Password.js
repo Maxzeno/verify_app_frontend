@@ -55,17 +55,17 @@ export default function Password() {
 
     // rendering the password component
     return (
-        <div className="container mx-auto">
+        <div className="my-5">
 
             <Toaster position='top-center' reverseOrder={false}></Toaster>
 
-            <div className="flex flex-col justify-center items-center h-screen">
-                <div className={styles.glass} style={{width: "30%", height: "80%"}}>
+            <div className="flex flex-col justify-center items-center">
+                <div className={styles.glass}>
 
                     <div className="title flex flex-col items-center">
-                        <h4 className="text-5xl font-bold">Hello {apiData?.firstName || apiData?.username}</h4>
-                        <span className="py-4 text-xl w-2/3 text-center text-gray-500">
-                            Explore More by connecting with us.
+                        <h4 className="text-4xl font-bold">Hello {apiData?.firstName || apiData?.username}</h4>
+                        <span className="py-4 text-xl text-center text-gray-500">
+                            Please fill in your password.
                         </span>
                     </div>
 

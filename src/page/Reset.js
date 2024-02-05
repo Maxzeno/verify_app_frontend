@@ -11,7 +11,7 @@ import styles from '../styles/Main.module.css';
 
 export default function Reset() {
 
-    const { username } = useAuthStore(state => state.auth);
+    const { email } = useAuthStore(state => state.auth);
 
     const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ export default function Reset() {
         onSubmit: async values => {
             console.log(values);
 
-            const resetPromise = resetPassword( { username, password: values.password } );
+            const resetPromise = resetPassword( { email, password: values.password } );
 
             toast.promise(resetPromise, {
                 loading: 'Updating...',
@@ -46,8 +46,9 @@ export default function Reset() {
         return (<h1 className='text-2xl font-bold'>Loading...</h1>);
     }
 
-    if(serverError) {
-        return (<h1 className='text-xl text-red-500'>{serverError.message}</h1>);
+    if (serverError) {
+        toast.error('Request recovery of email before reset!');
+         return <Navigate to={'/login'} replace={true}></Navigate>;
     }
 
     if( status && status !== 201 ) {
@@ -56,21 +57,21 @@ export default function Reset() {
 
     // rendering the reset component
     return (
-        <div className="container mx-auto">
+        <div className="my-5">
 
             <Toaster position='top-center' reverseOrder={false}></Toaster>
 
-            <div className="flex flex-col justify-center items-center h-screen">
-                <div className={styles.glass} style={{width : "50%"}}>
+            <div className="flex flex-col justify-center items-center">
+                <div className={styles.glass}>
 
                     <div className="title flex flex-col items-center">
                         <h4 className="text-5xl font-bold">Reset</h4>
-                        <span className="py-4 text-xl w-2/3 text-center text-gray-500">
+                        <span className="py-4 text-xl text-center text-gray-500">
                             Enter new Password
                         </span>
                     </div>
 
-                    <form className="py-20" onSubmit={formik.handleSubmit}>
+                    <form className="py-2" onSubmit={formik.handleSubmit}>
                         <div className="textbox flex flex-col items-center gap-6">
                             <input {...formik.getFieldProps('password')} className={styles.textbox} type="password" placeholder='New Password'></input>
                             <input {...formik.getFieldProps('confirm_pwd')} className={styles.textbox} type="password" placeholder='Repeat Password'></input>

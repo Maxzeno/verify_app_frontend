@@ -64,16 +64,16 @@ export default function Profile() {
 
     // rendering the profile component
     return (
-        <div className="container mx-auto px-5 py-5 overflow-x-hidden overflow-y-visible">
+        <div className="my-5">
 
             <Toaster position='top-center' reverseOrder={false}></Toaster>
 
             <div className="flex flex-col justify-center items-center">
-                <div className={`${styles.glass} ${extend.glass}`} style={{ width: "40%", height: "100%", paddingTop: '3em' }}>
+                <div className={`${styles.glass} ${extend.glass}`}>
 
                     <div className="title flex flex-col items-center">
                         <h4 className="text-5xl font-bold">Profile</h4>
-                        <span className="py-4 text-xl w-2/3 text-center text-gray-500">
+                        <span className="py-4 text-xl text-center text-gray-500">
                             You can update the details
                         </span>
                     </div>
@@ -87,18 +87,15 @@ export default function Profile() {
                             {/* <input onChange={onUpload} type="file" id='profile' name='profile'></input> */}
                         </div>
 
-                        <div className="textbox flex flex-col items-center gap-6">
-                            <div className="name flex w-3/4 gap-10">
-                                <input {...formik.getFieldProps('firstName')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='First Name'></input>
-                                <input {...formik.getFieldProps('lastName')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='Last Name'></input>
+                        <div className="textbox flex flex-col items-center gap-5">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                                <input {...formik.getFieldProps('firstName')} className={`${styles.textbox_full} w-full`} type="text" placeholder='First Name'></input>
+                                <input {...formik.getFieldProps('lastName')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Last Name'></input>
+                                <input {...formik.getFieldProps('mobile')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Mobile No.'></input>
+                                <input {...formik.getFieldProps('businessId')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Business Id'></input>
                             </div>
-
-                            <div className="name flex w-3/4 gap-10">
-                                <input {...formik.getFieldProps('mobile')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='Mobile No.'></input>
-                                <input {...formik.getFieldProps('businessId')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='Business Id'></input>
-                            </div>
-
-                            <input {...formik.getFieldProps('address')} className={`${styles.textbox} ${extend.textbox}`} type="text" placeholder='Address'></input>
+                            <input {...formik.getFieldProps('address')} className={`${styles.textbox_full} lg:w-[calc(100%-60px)]`} type="text" placeholder='Address'></input>
+                            
                             <button className={styles.btn} type="submit">Update</button>
 
                         </div>
