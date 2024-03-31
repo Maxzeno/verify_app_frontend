@@ -4,7 +4,7 @@ import useFetch from '../hooks/fetch.hook.js';
 import { useAuthStore } from '../store/store.js';
 
 
-export const ToDashboardIfLogin = ({ children }) => {
+export const ToDashboardIfAuth = ({ children }) => {
   const token = localStorage.getItem("token");
   const [{ isLoading, apiData, serverError }] = useFetch("getUserAuth", {
     headers: { Authorization: `Bearer ${token}` },

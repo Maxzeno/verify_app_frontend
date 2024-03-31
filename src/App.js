@@ -14,7 +14,7 @@ import Reset from './page/main/Reset.js';
 
 /* auth middleware */
 import NavbarCore from './components/NavDash.jsx';
-import { AuthorizeUser, ProtectRoute, ToDashboardIfLogin } from './middleware/auth.js';
+import { AuthorizeUser, ProtectRoute, ToDashboardIfAuth } from './middleware/auth.js';
 import Dashboard from './page/core/Dashboard.js';
 import FundWallet from './page/core/fundWallet.jsx';
 import NINService from './page/core/ninService.jsx';
@@ -29,27 +29,27 @@ import Services from './page/main/Services.jsx';
 const router = createBrowserRouter([
     {
        path : '/',
-       element : <ToDashboardIfLogin><Home></Home></ToDashboardIfLogin>
+       element : <ToDashboardIfAuth><Home></Home></ToDashboardIfAuth>
     },
     {
        path : '/about',
-       element : <ToDashboardIfLogin><About></About></ToDashboardIfLogin>
+       element : <ToDashboardIfAuth><About></About></ToDashboardIfAuth>
     },
         {
        path : '/services',
-       element : <ToDashboardIfLogin><Services></Services></ToDashboardIfLogin>
+       element : <ToDashboardIfAuth><Services></Services></ToDashboardIfAuth>
     },
     {
        path : '/login',
-       element : <ToDashboardIfLogin><Email></Email></ToDashboardIfLogin>
+       element : <ToDashboardIfAuth><Email></Email></ToDashboardIfAuth>
     },
     {
        path : '/register',
-       element : <ToDashboardIfLogin><Register></Register></ToDashboardIfLogin>
+       element : <ToDashboardIfAuth><Register></Register></ToDashboardIfAuth>
     },
     {
         path : '/password',
-        element : <ToDashboardIfLogin><ProtectRoute> <Password /> </ProtectRoute> </ToDashboardIfLogin>
+        element : <ToDashboardIfAuth><ProtectRoute> <Password /> </ProtectRoute> </ToDashboardIfAuth>
     },
     {
         path : '/profile',
@@ -57,11 +57,11 @@ const router = createBrowserRouter([
     },
     {
         path : '/recovery',
-        element : <ToDashboardIfLogin><Recovery></Recovery></ToDashboardIfLogin>
+        element : <ToDashboardIfAuth><Recovery></Recovery></ToDashboardIfAuth>
     },
     {
         path : '/reset',
-        element : <ToDashboardIfLogin><Reset></Reset></ToDashboardIfLogin>
+        element : <ToDashboardIfAuth><Reset></Reset></ToDashboardIfAuth>
     },
     {
         path : '/dashboard',
