@@ -71,13 +71,13 @@ export default function DemoVerify() {
               className={`${styles.textbox_full} w-full`}
               type="text"
               placeholder="First name"
-            ></input>
+            />
             <input
               {...formik.getFieldProps("lastname")}
               className={`${styles.textbox_full} w-full mt-5`}
               type="text"
               placeholder="Last name"
-            ></input>
+            />
             <select
               {...formik.getFieldProps("gender")}
               className={`${styles.textbox_full} w-full mt-5`}
@@ -91,7 +91,7 @@ export default function DemoVerify() {
               className={`${styles.textbox_full} w-full mt-5`}
               type="date"
               placeholder="Birth Day"
-            ></input>
+            />
             <select
               {...formik.getFieldProps("slipType")}
               className={`${styles.textbox_full} w-full mt-5`}

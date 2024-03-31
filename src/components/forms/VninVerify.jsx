@@ -73,7 +73,7 @@ export default function VNINVerify() {
               className={`${styles.textbox_full} w-full`}
               type="text"
               placeholder="VNIN"
-            ></input>
+            />
             <select
               {...formik.getFieldProps("slipType")}
               className={`${styles.textbox_full} w-full mt-5`}

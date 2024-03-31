@@ -75,7 +75,7 @@ export default function Recovery() {
                                 {/* <div className='py-4 text-sm text-left text-gray-500 text-center'>
                                     Enter 6 digit OTP sent to your email address
                                 </div> */}
-                                <input onChange={(e) => setOTP(e.target.value)} className={styles.textbox} type="text" placeholder='OTP'></input>
+                                <input onChange={(e) => setOTP(e.target.value)} className={styles.textbox} type="text" placeholder='OTP'/>
                             </div>
 
                             <button className={styles.btn} type="submit">Recover</button>

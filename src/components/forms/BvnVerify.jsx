@@ -70,7 +70,7 @@ export default function BVNVerify() {
               className={`${styles.textbox_full} w-full`}
               type="text"
               placeholder="BVN"
-            ></input>
+            />
 
             <button
               className={`${styles.btn_inline_width} mt-5`}

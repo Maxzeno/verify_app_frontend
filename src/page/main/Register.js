@@ -73,13 +73,13 @@ export default function Register() {
                                 <img src={file || avatar} className={styles.profile_img} alt="avatar"></img>
                             </label>
 
-                            {/* <input onChange={onUpload} type="file" id='profile' name='profile'></input> */}
+                            {/* <input onChange={onUpload} type="file" id='profile' name='profile'/> */}
                         </div>
 
                         <div className="textbox flex flex-col items-center gap-6">
-                            <input {...formik.getFieldProps('email')} className={styles.textbox} type="email" placeholder='Email*'></input>
-                            <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username*'></input>
-                            <input {...formik.getFieldProps('password')} className={styles.textbox} type="password" placeholder='Password*'></input>
+                            <input {...formik.getFieldProps('email')} className={styles.textbox} type="email" placeholder='Email*'/>
+                            <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username*'/>
+                            <input {...formik.getFieldProps('password')} className={styles.textbox} type="password" placeholder='Password*'/>
                             <button className={styles.btn} type="submit">Register</button>
                         </div>
 

@@ -68,7 +68,7 @@ export default function PhoneVerify() {
               className={`${styles.textbox_full} w-full`}
               type="text"
               placeholder="Phone number eg. 08082345678"
-            ></input>
+            />
             <select
               {...formik.getFieldProps("slipType")}
               className={`${styles.textbox_full} w-full mt-5`}

@@ -83,19 +83,19 @@ export default function Profile() {
                                 <img src={apiData?.profile || file || avatar} className={`${styles.profile_img} ${extend.profile_img}`} alt="avatar"></img>
                             </label>
 
-                            {/* <input onChange={onUpload} type="file" id='profile' name='profile'></input> */}
+                            {/* <input onChange={onUpload} type="file" id='profile' name='profile'/> */}
                         </div>
 
                         <div className="textbox flex flex-col items-center gap-5">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                                <input {...formik.getFieldProps('firstName')} className={`${styles.textbox_full} w-full`} type="text" placeholder='First Name'></input>
-                                <input {...formik.getFieldProps('lastName')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Last Name'></input>
-                                <input {...formik.getFieldProps('mobile')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Mobile No.'></input>
-                                <input {...formik.getFieldProps('businessId')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Business Id'></input>
+                                <input {...formik.getFieldProps('firstName')} className={`${styles.textbox_full} w-full`} type="text" placeholder='First Name'/>
+                                <input {...formik.getFieldProps('lastName')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Last Name'/>
+                                <input {...formik.getFieldProps('mobile')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Mobile No.'/>
+                                <input {...formik.getFieldProps('businessId')} className={`${styles.textbox_full} w-full`} type="text" placeholder='Business Id'/>
                             </div>
                             <div className="grid grid-cols-1 gap-5">
 
-                            <input {...formik.getFieldProps('address')} className={`${styles.textbox_full} col-span-1`} type="text" placeholder='Address'></input>
+                            <input {...formik.getFieldProps('address')} className={`${styles.textbox_full} col-span-1`} type="text" placeholder='Address'/>
                             </div>
                             <button className={styles.btn} type="submit">Update</button>
 

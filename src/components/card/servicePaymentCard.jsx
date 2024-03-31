@@ -41,7 +41,7 @@ export default function ServicePayment() {
             className={`${styles.textbox_full} w-full`}
             type="number"
             placeholder="Amount"
-          ></input>
+          />
 
           <button className={`${styles.btn_inline_width} mt-5`} type="submit">
             Pay Online

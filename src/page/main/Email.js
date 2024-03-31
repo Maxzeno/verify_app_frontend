@@ -60,7 +60,7 @@ export default function Email() {
 
 
                         <div className="textbox flex flex-col items-center gap-6">
-                            <input {...formik.getFieldProps('email')} className={styles.textbox} type="text" placeholder='Email'></input>
+                            <input {...formik.getFieldProps('email')} className={styles.textbox} type="text" placeholder='Email'/>
                             <button className={styles.btn} type="submit">Let's Go!</button>
                         </div>
                     
