@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 /* import all components */
 import Profile from './page/core/Profile.js';
+import VerificationDetail from './page/core/verificationDetail.jsx';
+import VerificationHistory from './page/core/verificationHistory.jsx';
 import PageNotFound from './page/main/PageNotFound.js';
 import Password from './page/main/Password.js';
 import Recovery from './page/main/Recovery.js';
@@ -15,8 +17,10 @@ import NavbarCore from './components/NavDash.jsx';
 import { AuthorizeUser, ProtectRoute } from './middleware/auth.js';
 import Dashboard from './page/core/Dashboard.js';
 import FundWallet from './page/core/fundWallet.jsx';
+import About from './page/main/About.jsx';
 import Email from './page/main/Email.js';
 import Home from './page/main/Home.js';
+import Services from './page/main/Services.jsx';
 
 
 /* root routes */
@@ -24,6 +28,14 @@ const router = createBrowserRouter([
     {
        path : '/',
        element : <Home></Home>
+    },
+    {
+       path : '/about',
+       element : <About></About>
+    },
+        {
+       path : '/services',
+       element : <Services></Services>
     },
     {
        path : '/login',
@@ -56,6 +68,14 @@ const router = createBrowserRouter([
     {
         path : '/fund-wallet',
         element : <AuthorizeUser><NavbarCore headerName='Fund Wallet'><FundWallet></FundWallet> </NavbarCore></AuthorizeUser> 
+    },
+    {
+        path : '/verification-history',
+        element : <AuthorizeUser><NavbarCore headerName='Verification History'><VerificationHistory></VerificationHistory> </NavbarCore></AuthorizeUser> 
+    },
+    {
+        path : '/detail/:id',
+        element : <AuthorizeUser><NavbarCore headerName='Detail'><VerificationDetail></VerificationDetail> </NavbarCore></AuthorizeUser> 
     },
     {
         path : '*',

@@ -5,7 +5,7 @@ export default function NINVerify() {
   const formik = useFormik({
     initialValues: {
       nin: "",
-      slip: "",
+      slip: "slip1",
     },
     enableReinitialize: true,
     validate: (values) => {
@@ -15,6 +15,7 @@ export default function NINVerify() {
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async (values) => {
+      console.log(values, "nin valuess");
       values = await Object.assign(values);
 
       // const submitPromise = submit(values);
@@ -44,7 +45,7 @@ export default function NINVerify() {
           <select
             {...formik.getFieldProps("slip")}
             className={`${styles.textbox_full} w-full mt-5`}
-            defaultValue=""
+            defaultValue={formik.initialValues.slip}
           >
             <option value="slip1">Slip1</option>
             <option value="slip2">Slip2</option>

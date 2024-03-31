@@ -11,7 +11,7 @@ const Testimonial = () => {
       <div className="max-w-6xl px-5 mx-auto mt-32 text-center">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center">
-          What's Different About Manage?
+          What's Different About Verifier?
         </h2>
         {/* Testimonials Container */}
         <div className="flex flex-col mt-24 md:flex-row md:space-x-6">

@@ -47,8 +47,9 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     onClick={menuFunc}
                     to="/dashboard"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex ${
-                      currentUrl.includes("/dashboard") &&
-                      "bg-blue-500 hover:bg-blue-400 text-white"
+                      currentUrl.includes("/dashboard")
+                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        : "hover:bg-gray-200"
                     }`}
                   >
                     Dashboard
@@ -59,8 +60,9 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     onClick={menuFunc}
                     to="/fund-wallet"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      currentUrl.includes("/fund-wallet") &&
-                      "bg-blue-500 hover:bg-blue-400 text-white"
+                      currentUrl.includes("/fund-wallet")
+                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        : "hover:bg-gray-200"
                     }`}
                   >
                     Fund Wallet
@@ -69,9 +71,12 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                 <div>
                   <Link
                     onClick={menuFunc}
-                    to="#"
+                    to="/verification-history"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false && "bg-blue-500 hover:bg-blue-400 text-white"
+                      currentUrl.includes("/verification-history") ||
+                      currentUrl.includes("/detail")
+                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        : "hover:bg-gray-200"
                     }`}
                   >
                     Verification History
@@ -82,7 +87,9 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     onClick={menuFunc}
                     to="#"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false && "bg-blue-500 hover:bg-blue-400 text-white"
+                      false
+                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        : "hover:bg-gray-200"
                     }`}
                   >
                     Payment History
@@ -95,10 +102,12 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     onClick={menuFunc}
                     to="#"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false && "bg-blue-500 hover:bg-blue-400 text-white"
+                      false
+                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        : "hover:bg-gray-200"
                     }`}
                   >
-                    NIN Verification
+                    NIN Services
                   </Link>
                 </div>
                 <div>
@@ -106,10 +115,12 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     onClick={menuFunc}
                     to="#"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false && "bg-blue-500 hover:bg-blue-400 text-white"
+                      false
+                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        : "hover:bg-gray-200"
                     }`}
                   >
-                    Phone Verification
+                    BVN Services
                   </Link>
                 </div>
                 <div>
@@ -117,10 +128,12 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     onClick={menuFunc}
                     to="#"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false && "bg-blue-500 hover:bg-blue-400 text-white"
+                      false
+                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        : "hover:bg-gray-200"
                     }`}
                   >
-                    Demo Data Verification
+                    Other Services
                   </Link>
                 </div>
                 {/* <div>

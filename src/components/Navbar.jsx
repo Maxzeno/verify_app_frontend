@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className="relative container mx-auto p-6">
-      <div className="fixed bottom-5 right-5 lg:right-10 z-10">
+      <div className="fixed bottom-14 right-5 lg:right-10 z-10">
         <Link
           to="https://chat.whatsapp.com/whatsappgroup"
           className="text-indigo-500 hover:text-[#ff6a6a]"
@@ -25,10 +25,10 @@ const Navbar = () => {
         </div>
         {/* Menu Items */}
         <div className="hidden space-x-6 md:flex">
-          <Link to="#" className="hover:text-darkGrayishBlue py-3 pt-2">
+          <Link to="/about" className="hover:text-darkGrayishBlue py-3 pt-2">
             About
           </Link>
-          <Link to="#" className="hover:text-darkGrayishBlue py-3 pt-2">
+          <Link to="/services" className="hover:text-darkGrayishBlue py-3 pt-2">
             Services
           </Link>
           <Link to="/login" className="hover:text-darkGrayishBlue py-3 pt-2">
