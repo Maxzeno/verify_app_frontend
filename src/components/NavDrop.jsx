@@ -3,7 +3,7 @@ import { Person, Power, Speedometer2 } from "react-bootstrap-icons";
 import { Link, useNavigate } from "react-router-dom";
 import personLogo from "../assets/profile.png";
 
-function NavDrop({ name }) {
+function NavDrop() {
   const [show, setShow] = useState(false);
 
   const handleSelect = () => {
@@ -32,9 +32,6 @@ function NavDrop({ name }) {
       </div>
       {show && (
         <div className="w-40 text-neutral-700 py-2 shadow-md rounded-md px-2 absolute top-10 right-0 bg-white">
-          <div className="border-b px-2 py-2 truncate text-ellipsis">
-            <div>Hi {name}</div>
-          </div>
           <Link to="/dashboard">
             <div
               className="hover:text-neutral-500 border-b px-2 py-2 flex"

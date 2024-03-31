@@ -100,9 +100,9 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                 <div>
                   <Link
                     onClick={menuFunc}
-                    to="#"
+                    to="/nin-service"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false
+                      currentUrl.includes("/nin-service")
                         ? "bg-blue-500 hover:bg-blue-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
@@ -157,7 +157,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                 <div className="font-extrabold text-3xl">{headerName}</div>
                 <div className="flex">
                   <div>
-                    <NavDrop name={"Emma"} />
+                    <NavDrop />
                   </div>
                   <button
                     className="md:hidden rounded border-2 border-zinc-600 hover:border-zinc-500 ml-3"

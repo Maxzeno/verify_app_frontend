@@ -54,7 +54,10 @@ export default function VerificationDetail() {
     <div>
       <div className="mx-5">
         <div className="flex justify-between items-center my-5">
-          <span className="font-bold text-xl"> NIN Verification</span>
+          <span className="font-bold text-xl">
+            {" "}
+            {apiData?.channel.toUpperCase() || "N/A"}
+          </span>
           <button
             disabled={downloading}
             onClick={downloadPDF}

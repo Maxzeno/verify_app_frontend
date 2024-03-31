@@ -17,6 +17,7 @@ import NavbarCore from './components/NavDash.jsx';
 import { AuthorizeUser, ProtectRoute } from './middleware/auth.js';
 import Dashboard from './page/core/Dashboard.js';
 import FundWallet from './page/core/fundWallet.jsx';
+import NINService from './page/core/ninService.jsx';
 import PaymentHistory from './page/core/paymentHistory.jsx';
 import About from './page/main/About.jsx';
 import Email from './page/main/Email.js';
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
     {
         path : '/payment-history',
         element : <AuthorizeUser><NavbarCore headerName='Payment History'><PaymentHistory></PaymentHistory> </NavbarCore></AuthorizeUser> 
+    },
+        {
+        path : '/nin-service',
+        element : <AuthorizeUser><NavbarCore headerName='NIN Service'><NINService></NINService> </NavbarCore></AuthorizeUser> 
     },
     {
         path : '/detail/:id',
