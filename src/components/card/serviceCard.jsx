@@ -1,7 +1,7 @@
 import { ArrowRight } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
-export default function ServiceCard({ title, body, to }) {
+export default function ServiceCard({ title, body, to, soon = false }) {
   return (
     <Link
       to={to}
@@ -10,7 +10,12 @@ export default function ServiceCard({ title, body, to }) {
       <div className="p-10">
         <div className="flex justify-between">
           <span className="font-thin text-2xl">{title}</span>
-          <span>
+          <span className="flex items-center">
+            {soon && (
+              <span className="mr-2 bg-blue-500 text-white p-1 rounded-full text-xs">
+                soon
+              </span>
+            )}
             <ArrowRight />
           </span>
         </div>

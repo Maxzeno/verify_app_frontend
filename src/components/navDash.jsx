@@ -120,7 +120,13 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                         : "hover:bg-gray-200"
                     }`}
                   >
-                    BVN Services
+                    <div className="flex items-center justify-between flex-1">
+                      <span>BVN Services</span>
+
+                      <span className="mr-2 bg-blue-500 text-white p-1 rounded-full text-xs">
+                        soon
+                      </span>
+                    </div>
                   </Link>
                 </div>
                 <div>
@@ -133,20 +139,15 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                         : "hover:bg-gray-200"
                     }`}
                   >
-                    Other Services
+                    <div className="flex items-center justify-between flex-1">
+                      <span>Other Services</span>
+
+                      <span className="mr-2 bg-blue-500 text-white p-1 rounded-full text-xs">
+                        soon
+                      </span>
+                    </div>
                   </Link>
                 </div>
-                {/* <div>
-                  <Link
-                    onClick={menuFunc}
-                    to="#"
-                    className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false && "bg-blue-500 hover:bg-blue-400 text-white"
-                    }`}
-                  >
-                    Driver Licence
-                  </Link>
-                </div> */}
               </div>
             </div>
           </div>

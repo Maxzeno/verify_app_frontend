@@ -60,13 +60,13 @@ export default function VerificationDetail() {
           </span>
           <button
             disabled={downloading}
-            onClick={downloadPDF}
+            onClick={downloading ? () => {} : downloadPDF}
             className={`${styles.btn_inline_width}`}
           >
             {downloading ? "Downloading..." : "Download PDF"}
           </button>
         </div>
-        <div className="py-2">
+        <div className="pt-2 pb-5">
           <img
             src={data?.data?.photo || avatarNotAvailable}
             alt="Person"

@@ -14,7 +14,7 @@ import Reset from './page/main/Reset.js';
 
 /* auth middleware */
 import NavbarCore from './components/NavDash.jsx';
-import { AuthorizeUser, ProtectRoute } from './middleware/auth.js';
+import { AuthorizeUser, ProtectRoute, ToDashboardIfLogin } from './middleware/auth.js';
 import Dashboard from './page/core/Dashboard.js';
 import FundWallet from './page/core/fundWallet.jsx';
 import NINService from './page/core/ninService.jsx';
@@ -29,27 +29,27 @@ import Services from './page/main/Services.jsx';
 const router = createBrowserRouter([
     {
        path : '/',
-       element : <Home></Home>
+       element : <ToDashboardIfLogin><Home></Home></ToDashboardIfLogin>
     },
     {
        path : '/about',
-       element : <About></About>
+       element : <ToDashboardIfLogin><About></About></ToDashboardIfLogin>
     },
         {
        path : '/services',
-       element : <Services></Services>
+       element : <ToDashboardIfLogin><Services></Services></ToDashboardIfLogin>
     },
     {
        path : '/login',
-       element : <Email></Email>
+       element : <ToDashboardIfLogin><Email></Email></ToDashboardIfLogin>
     },
     {
        path : '/register',
-       element : <Register></Register>
+       element : <ToDashboardIfLogin><Register></Register></ToDashboardIfLogin>
     },
     {
         path : '/password',
-        element : <ProtectRoute> <Password /> </ProtectRoute> 
+        element : <ToDashboardIfLogin><ProtectRoute> <Password /> </ProtectRoute> </ToDashboardIfLogin>
     },
     {
         path : '/profile',
@@ -57,11 +57,11 @@ const router = createBrowserRouter([
     },
     {
         path : '/recovery',
-        element : <Recovery></Recovery>
+        element : <ToDashboardIfLogin><Recovery></Recovery></ToDashboardIfLogin>
     },
     {
         path : '/reset',
-        element : <Reset></Reset>
+        element : <ToDashboardIfLogin><Reset></Reset></ToDashboardIfLogin>
     },
     {
         path : '/dashboard',
