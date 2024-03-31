@@ -15,6 +15,7 @@ import Reset from './page/main/Reset.js';
 /* auth middleware */
 import NavbarCore from './components/NavDash.jsx';
 import { AuthorizeUser, ProtectRoute, ToDashboardIfAuth } from './middleware/auth.js';
+import BVNService from './page/core/bvnService.jsx';
 import Dashboard from './page/core/Dashboard.js';
 import FundWallet from './page/core/fundWallet.jsx';
 import NINService from './page/core/ninService.jsx';
@@ -79,9 +80,13 @@ const router = createBrowserRouter([
         path : '/payment-history',
         element : <AuthorizeUser><NavbarCore headerName='Payment History'><PaymentHistory></PaymentHistory> </NavbarCore></AuthorizeUser> 
     },
-        {
+    {
         path : '/nin-service',
         element : <AuthorizeUser><NavbarCore headerName='NIN Service'><NINService></NINService> </NavbarCore></AuthorizeUser> 
+    },
+    {
+        path : '/bvn-service',
+        element : <AuthorizeUser><NavbarCore headerName='BVN Service'><BVNService></BVNService> </NavbarCore></AuthorizeUser> 
     },
     {
         path : '/detail/:id',

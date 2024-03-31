@@ -119,20 +119,14 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                 <div>
                   <Link
                     onClick={menuFunc}
-                    to="#"
+                    to="/bvn-service"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false
+                      currentUrl.includes("/bvn-service")
                         ? "bg-blue-500 hover:bg-blue-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
-                    <div className="flex items-center justify-between flex-1">
-                      <span>BVN Services</span>
-
-                      <span className="mr-2 bg-blue-500 text-white p-1 rounded-full text-xs">
-                        soon
-                      </span>
-                    </div>
+                    BVN Services
                   </Link>
                 </div>
                 <div>
