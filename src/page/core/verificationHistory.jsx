@@ -47,10 +47,9 @@ export default function VerificationHistory() {
   const theme = useTheme([colorTheme, stripedTheme, marginTheme]);
   const token = localStorage.getItem("token");
   const [{ isLoading, apiData, serverError }] = useFetch(
-    "getVerificationsByAuthUser",
+    "getVerificationsByAuthUser?limit=1000",
     { headers: { Authorization: `Bearer ${token}` } }
   );
-  console.log("apidate", apiData);
 
   function formartDate(dateStr) {
     const date = new Date(dateStr);

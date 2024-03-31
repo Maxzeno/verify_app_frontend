@@ -46,10 +46,9 @@ export default function PaymentHistory() {
   const theme = useTheme([colorTheme, stripedTheme, marginTheme]);
   const token = localStorage.getItem("token");
   const [{ isLoading, apiData, serverError }] = useFetch(
-    "getPaymentsByAuthUser",
+    "getPaymentsByAuthUser?limit=1000",
     { headers: { Authorization: `Bearer ${token}` } }
   );
-  console.log("apidate", apiData);
 
   function formartDate(dateStr) {
     const date = new Date(dateStr);
