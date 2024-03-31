@@ -153,7 +153,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
           </div>
 
           <div className="overflow-auto md:col-span-4 relative w-auto bg-gray-200">
-            <nav className="py-3">
+            <nav className="py-3 bg-white mb-3 border-b border-gray-300">
               <div className="flex justify-between px-5">
                 <div className="font-extrabold text-3xl">{headerName}</div>
                 <div className="flex">

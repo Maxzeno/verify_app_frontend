@@ -31,7 +31,7 @@ function NavDrop() {
         />
       </div>
       {show && (
-        <div className="w-40 text-neutral-700 py-2 shadow-md rounded-md px-2 absolute top-10 right-0 bg-white">
+        <div className="w-40 text-neutral-700 py-2 shadow-md rounded-md px-2 absolute top-10 right-0 bg-white  border border-gray-300">
           <Link to="/dashboard">
             <div
               className="hover:text-neutral-500 border-b px-2 py-2 flex"
