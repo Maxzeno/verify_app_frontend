@@ -29,7 +29,7 @@
 }
 
 .btn_inline_width{
-    @apply border bg-indigo-500 p-3 rounded-lg text-gray-50 text-lg shadow-sm text-center;
+    @apply border bg-indigo-500 disabled:bg-indigo-400 p-3 rounded-lg text-gray-50 text-lg shadow-sm text-center;
 }
 
 .btn:hover .btn_inline_width:hover{

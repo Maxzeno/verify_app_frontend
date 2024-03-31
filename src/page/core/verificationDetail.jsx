@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import avatarNotAvailable from "../../assets/images/not-available.jpg";
 import FooterShortCore from "../../components/FooterShortCore";
@@ -15,8 +15,10 @@ export default function VerificationDetail() {
     { headers: { Authorization: `Bearer ${token}` } }
   );
 
+  const [downloading, setDownloading] = useState(false);
   const downloadPDF = async () => {
     try {
+      setDownloading(true);
       const response = await axios.get(
         process.env.REACT_APP_SERVER_DOMAIN + `/api/generateCard/${id}`,
         { headers: { Authorization: `Bearer ${token}` }, responseType: "blob" }
@@ -26,13 +28,15 @@ export default function VerificationDetail() {
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "your-file-name.pdf"; // Set your desired file name here
+      a.download = "download.pdf"; // Set your desired file name here
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
+      setDownloading(false);
     } catch (error) {
       console.error("Error downloading PDF:", error);
+      setDownloading(false);
     }
   };
 
@@ -52,10 +56,11 @@ export default function VerificationDetail() {
         <div className="flex justify-between items-center my-5">
           <span className="font-bold text-xl"> NIN Verification</span>
           <button
+            disabled={downloading}
             onClick={downloadPDF}
             className={`${styles.btn_inline_width}`}
           >
-            Download PDF
+            {downloading ? "Downloading..." : "Download PDF"}
           </button>
         </div>
         <div className="py-2">
