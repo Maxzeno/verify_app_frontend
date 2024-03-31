@@ -2,6 +2,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { NIN_CHARGE } from "../../helper/constant";
 import styles from "../../styles/Main.module.css";
 
 export default function NINVerify() {
@@ -56,37 +57,51 @@ export default function NINVerify() {
     },
   });
   return (
-    <div className="p-10 bg-white rounded-lg">
-      <Toaster position="top-center" reverseOrder={false}></Toaster>
+    <div>
+      <div className="p-10 bg-white rounded-lg">
+        <Toaster position="top-center" reverseOrder={false}></Toaster>
 
-      <div className="font-thin text-2xl">NIN Verification: By NIN</div>
-      <div className="font-thin text-sm pt-4">Charge: ₦150 + Slip charge</div>
-
-      <form className="pt-7" onSubmit={formik.handleSubmit}>
-        <div className="textbox">
-          <input
-            {...formik.getFieldProps("nin")}
-            className={`${styles.textbox_full} w-full`}
-            type="text"
-            placeholder="NIN"
-          ></input>
-          <select
-            {...formik.getFieldProps("slipType")}
-            className={`${styles.textbox_full} w-full mt-5`}
-            defaultValue={formik.initialValues.slip}
-          >
-            <option value="nin-basic">Basic</option>
-            <option value="nin-basic-id">Basic ID</option>
-          </select>
-          <button
-            className={`${styles.btn_inline_width} mt-5`}
-            type="submit"
-            disabled={formik.isSubmitting}
-          >
-            {formik.isSubmitting ? "Submitting..." : "Submit"}
-          </button>
+        <div className="font-thin text-2xl">NIN Verification: By NIN</div>
+        <div className="font-thin text-sm pt-4">
+          Charge: ₦{NIN_CHARGE} + Slip charge
         </div>
-      </form>
+
+        <form className="pt-7" onSubmit={formik.handleSubmit}>
+          <div className="textbox">
+            <input
+              {...formik.getFieldProps("nin")}
+              className={`${styles.textbox_full} w-full`}
+              type="text"
+              placeholder="NIN"
+            ></input>
+            <select
+              {...formik.getFieldProps("slipType")}
+              className={`${styles.textbox_full} w-full mt-5`}
+              defaultValue={formik.initialValues.slip}
+            >
+              <option value="nin-basic">
+                Basic (₦{NIN_CHARGE} + Slip:Free)
+              </option>
+              <option value="nin-basic-id">
+                ID Slip (₦{NIN_CHARGE} + Slip:₦100)
+              </option>
+              <option value="nin-premium">
+                Premuim Slip(₦{NIN_CHARGE} + Slip:₦150)
+              </option>
+              <option value="nin-customised">
+                Customised Slip (₦{NIN_CHARGE} + Slip:₦100)
+              </option>
+            </select>
+            <button
+              className={`${styles.btn_inline_width} mt-5`}
+              type="submit"
+              disabled={formik.isSubmitting}
+            >
+              {formik.isSubmitting ? "Submitting..." : "Submit"}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

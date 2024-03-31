@@ -58,13 +58,15 @@ export default function VerificationDetail() {
             {" "}
             {apiData?.channel.toUpperCase() || "N/A"}
           </span>
-          <button
-            disabled={downloading}
-            onClick={downloading ? () => {} : downloadPDF}
-            className={`${styles.btn_inline_width}`}
-          >
-            {downloading ? "Downloading..." : "Download PDF"}
-          </button>
+          {apiData?.channel.startsWith("nin") && (
+            <button
+              disabled={downloading}
+              onClick={downloading ? () => {} : downloadPDF}
+              className={`${styles.btn_inline_width}`}
+            >
+              {downloading ? "Downloading..." : "Download PDF"}
+            </button>
+          )}
         </div>
         <div className="pt-2 pb-5">
           <img

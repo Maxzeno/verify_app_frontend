@@ -29,9 +29,7 @@ export default function ServicePayment() {
   });
   return (
     <div className="p-10 bg-white rounded-lg">
-      <div className="font-thin text-2xl">
-        Pay with Paystack Payment Gateway
-      </div>
+      <div className="font-thin text-2xl">Fund via Online Payment</div>
       <div className="font-thin text-sm pt-4">
         Your Wallet will be credited automatically
       </div>
@@ -46,7 +44,7 @@ export default function ServicePayment() {
           ></input>
 
           <button className={`${styles.btn_inline_width} mt-5`} type="submit">
-            Pay with Paystack
+            Pay Online
           </button>
         </div>
       </form>

@@ -1,19 +1,24 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import toast, { Toaster } from "react-hot-toast";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { NIN_CHARGE } from "../../helper/constant";
 import styles from "../../styles/Main.module.css";
 
-export default function PhoneVerify() {
+export default function VNINVerify() {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
-      phone: "",
+      vnin: "",
       slipType: "nin-basic",
     },
     enableReinitialize: true,
     validate: (values) => {
       const errors = {};
+      // if (!values.nin) {
+      //   errors.nin = "NIN is required";
+      // }
       return errors;
     },
     validateOnBlur: false,
@@ -25,7 +30,7 @@ export default function PhoneVerify() {
 
       try {
         const data = await axios.post(
-          process.env.REACT_APP_SERVER_DOMAIN + "/api/verifyNINByPhone",
+          process.env.REACT_APP_SERVER_DOMAIN + "/api/verifyVNIN",
           values,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -34,7 +39,7 @@ export default function PhoneVerify() {
         try {
           console.log(data.data, data.status, "datat");
           if (data.status === 200) {
-            Navigate(`/detail/${data.data._id}`, { replace: true });
+            navigate(`/detail/${data.data._id}`, { replace: true });
           }
         } catch (error) {
           console.log(error);
@@ -56,21 +61,23 @@ export default function PhoneVerify() {
       <div className="p-10 bg-white rounded-lg">
         <Toaster position="top-center" reverseOrder={false}></Toaster>
 
-        <div className="font-thin text-2xl">NIN Verification: By Phone</div>
-        <div className="font-thin text-sm pt-4">Charge: ₦150 + Slip charge</div>
+        <div className="font-thin text-2xl">NIN Verification: By VNIN</div>
+        <div className="font-thin text-sm pt-4">
+          Charge: ₦{NIN_CHARGE} + Slip charge
+        </div>
 
         <form className="pt-7" onSubmit={formik.handleSubmit}>
           <div className="textbox">
             <input
-              {...formik.getFieldProps("phone")}
+              {...formik.getFieldProps("vnin")}
               className={`${styles.textbox_full} w-full`}
               type="text"
-              placeholder="Phone number eg. 08082345678"
+              placeholder="VNIN"
             ></input>
             <select
               {...formik.getFieldProps("slipType")}
               className={`${styles.textbox_full} w-full mt-5`}
-              defaultValue=""
+              defaultValue={formik.initialValues.slip}
             >
               <option value="nin-basic">
                 Basic (₦{NIN_CHARGE} + Slip:Free)
@@ -85,8 +92,12 @@ export default function PhoneVerify() {
                 Customised Slip (₦{NIN_CHARGE} + Slip:₦100)
               </option>
             </select>
-            <button className={`${styles.btn_inline_width} mt-5`} type="submit">
-              Submit
+            <button
+              className={`${styles.btn_inline_width} mt-5`}
+              type="submit"
+              disabled={formik.isSubmitting}
+            >
+              {formik.isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>

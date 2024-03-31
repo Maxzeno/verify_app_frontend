@@ -26,7 +26,13 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
             to="https://chat.whatsapp.com/whatsappgroup"
             className="text-indigo-500 hover:text-[#ff6a6a]"
           >
-            <img src={whatsappLogo} alt="Logo" width={50} height={50} />
+            <img
+              className="rounded-lg"
+              src={whatsappLogo}
+              alt="Logo"
+              width={50}
+              height={50}
+            />
           </Link>
         </div>
         <div className="z-10 md:overflow-auto md:grid md:grid-cols-6 lg:grid-cols-5 md:h-screen">

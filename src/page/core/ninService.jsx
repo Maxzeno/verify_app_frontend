@@ -3,6 +3,7 @@ import FooterShortCore from "../../components/FooterShortCore";
 import DemoVerify from "../../components/forms/DemoVerify";
 import NINVerify from "../../components/forms/NinVerify";
 import PhoneVerify from "../../components/forms/PhoneVerify";
+import VNINVerify from "../../components/forms/VninVerify";
 
 export default function NINService() {
   return (
@@ -11,6 +12,7 @@ export default function NINService() {
         <NINVerify />
         <PhoneVerify />
         <DemoVerify />
+        <VNINVerify />
       </div>
 
       <FooterShortCore />

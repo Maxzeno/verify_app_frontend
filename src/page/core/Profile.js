@@ -68,7 +68,7 @@ export default function Profile() {
             <Toaster position='top-center' reverseOrder={false}></Toaster>
 
             <div className="flex flex-col justify-center items-center">
-                <div className={`${styles.glass} ${extend.glass}`}>
+                <div className={`${styles.glass_profile} ${extend.glass}`}>
 
                     <div className="title flex flex-col items-center">
                         <h4 className="text-5xl font-bold">Profile</h4>

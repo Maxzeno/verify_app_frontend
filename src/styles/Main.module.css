@@ -7,6 +7,15 @@
     @apply border-4 border-gray-50 shrink-0 h-3/4 rounded-3xl py-20 px-7 mx-5;
 }
 
+.glass_profile{
+    background: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px #4747470b;
+    backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    @apply border-4 border-gray-50 shrink-0 h-3/4 rounded-3xl py-20 px-7 mx-5;
+}
+
 .profile_img{
     @apply border-4 border-gray-100 w-[135px] rounded-full shadow-lg cursor-text;
     /* @apply hover:border-gray-200; */
@@ -20,7 +29,7 @@
 
 .textbox_full{
     border-width: 1px;
-    @apply border-gray-300 px-5 py-4 rounded-xl shadow-sm text-lg bg-gray-200;
+    @apply border-gray-300 px-5 py-4 rounded-xl shadow-sm text-lg bg-gray-100;
     @apply focus:outline-none;
 }
 
