@@ -2,7 +2,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { NIN_CHARGE } from "../../helper/constant";
+import { BVN_CHARGE } from "../../helper/constant";
 import styles from "../../styles/Main.module.css";
 
 export default function BVNVerify() {
@@ -61,7 +61,7 @@ export default function BVNVerify() {
         <Toaster position="top-center" reverseOrder={false}></Toaster>
 
         <div className="font-thin text-2xl">BVN Verification: By BVN</div>
-        <div className="font-thin text-sm pt-4">Charge: ₦{NIN_CHARGE}</div>
+        <div className="font-thin text-sm pt-4">Charge: ₦{BVN_CHARGE}</div>
 
         <form className="pt-7" onSubmit={formik.handleSubmit}>
           <div className="textbox">

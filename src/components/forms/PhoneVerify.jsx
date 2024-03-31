@@ -57,7 +57,9 @@ export default function PhoneVerify() {
         <Toaster position="top-center" reverseOrder={false}></Toaster>
 
         <div className="font-thin text-2xl">NIN Verification: By Phone</div>
-        <div className="font-thin text-sm pt-4">Charge: ₦150 + Slip charge</div>
+        <div className="font-thin text-sm pt-4">
+          Charge: ₦{NIN_CHARGE} + Slip charge
+        </div>
 
         <form className="pt-7" onSubmit={formik.handleSubmit}>
           <div className="textbox">
@@ -85,8 +87,12 @@ export default function PhoneVerify() {
                 Customised Slip (₦{NIN_CHARGE} + Slip:₦100)
               </option>
             </select>
-            <button className={`${styles.btn_inline_width} mt-5`} type="submit">
-              Submit
+            <button
+              className={`${styles.btn_inline_width} mt-5`}
+              type="submit"
+              disabled={formik.isSubmitting}
+            >
+              {formik.isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>

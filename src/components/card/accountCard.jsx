@@ -19,7 +19,7 @@ export default function AccountCard() {
       </div>
       <div className="font-thin text-1xl pt-2">
         <Link
-          to="https://chat.whatsapp.com/whatsappgroup"
+          to="https://chat.whatsapp.com/EoRESLRZwnz4X0bixDSQuL"
           className="text-indigo-500 hover:text-[#ff6a6a]"
         >
           WHATSAPP GROUP

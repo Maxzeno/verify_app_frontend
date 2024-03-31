@@ -68,6 +68,7 @@ export default function VerificationDetail() {
             </button>
           )}
         </div>
+
         <div className="pt-2 pb-5">
           <img
             src={data?.data?.photo || avatarNotAvailable}

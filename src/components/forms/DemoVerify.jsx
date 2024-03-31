@@ -60,7 +60,9 @@ export default function DemoVerify() {
         <Toaster position="top-center" reverseOrder={false}></Toaster>
 
         <div className="font-thin text-2xl">NIN Verification: By Demo Data</div>
-        <div className="font-thin text-sm pt-4">Charge: ₦150 + Slip charge</div>
+        <div className="font-thin text-sm pt-4">
+          Charge: ₦{NIN_CHARGE} + Slip charge
+        </div>
 
         <form className="pt-7" onSubmit={formik.handleSubmit}>
           <div className="textbox">
@@ -76,12 +78,14 @@ export default function DemoVerify() {
               type="text"
               placeholder="Last name"
             ></input>
-            <input
+            <select
               {...formik.getFieldProps("gender")}
               className={`${styles.textbox_full} w-full mt-5`}
-              type="text"
-              placeholder="Gender"
-            ></input>
+              defaultValue=""
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
             <input
               {...formik.getFieldProps("dob")}
               className={`${styles.textbox_full} w-full mt-5`}
@@ -106,8 +110,12 @@ export default function DemoVerify() {
                 Customised Slip (₦{NIN_CHARGE} + Slip:₦100)
               </option>
             </select>
-            <button className={`${styles.btn_inline_width} mt-5`} type="submit">
-              Submit
+            <button
+              className={`${styles.btn_inline_width} mt-5`}
+              type="submit"
+              disabled={formik.isSubmitting}
+            >
+              {formik.isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </div>
         </form>

@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="relative container mx-auto p-6">
       <div className="fixed bottom-14 right-5 lg:right-10 z-10">
         <Link
-          to="https://chat.whatsapp.com/whatsappgroup"
+          to="https://chat.whatsapp.com/EoRESLRZwnz4X0bixDSQuL"
           className="text-indigo-500 hover:text-[#ff6a6a]"
         >
           <img src={whatsappLogo} alt="Logo" width={50} height={50} />
