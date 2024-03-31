@@ -85,9 +85,9 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                 <div>
                   <Link
                     onClick={menuFunc}
-                    to="#"
+                    to="/payment-history"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
-                      false
+                      currentUrl.includes("/payment-history")
                         ? "bg-blue-500 hover:bg-blue-400 text-white"
                         : "hover:bg-gray-200"
                     }`}

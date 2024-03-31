@@ -17,6 +17,7 @@ import NavbarCore from './components/NavDash.jsx';
 import { AuthorizeUser, ProtectRoute } from './middleware/auth.js';
 import Dashboard from './page/core/Dashboard.js';
 import FundWallet from './page/core/fundWallet.jsx';
+import PaymentHistory from './page/core/paymentHistory.jsx';
 import About from './page/main/About.jsx';
 import Email from './page/main/Email.js';
 import Home from './page/main/Home.js';
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
     {
         path : '/verification-history',
         element : <AuthorizeUser><NavbarCore headerName='Verification History'><VerificationHistory></VerificationHistory> </NavbarCore></AuthorizeUser> 
+    },
+    {
+        path : '/payment-history',
+        element : <AuthorizeUser><NavbarCore headerName='Payment History'><PaymentHistory></PaymentHistory> </NavbarCore></AuthorizeUser> 
     },
     {
         path : '/detail/:id',

@@ -43,15 +43,6 @@ const marginTheme = {
       `,
 };
 
-const nodes = [
-  {
-    _id: "0",
-    channel: "Operating System",
-    slipType: "SETUP",
-    created_at: "2020-02-14T23:00:00.000Z",
-  },
-];
-
 export default function VerificationHistory() {
   const theme = useTheme([colorTheme, stripedTheme, marginTheme]);
   const token = localStorage.getItem("token");
