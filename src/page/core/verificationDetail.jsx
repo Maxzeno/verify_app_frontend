@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import avatarNotAvailable from "../../assets/images/not-available.jpg";
 import FooterShortCore from "../../components/FooterShortCore";
+import BVNVerificationDetail from "../../components/verificationDetail/bvn";
+import NINVerificationDetail from "../../components/verificationDetail/nin";
+import VNINVerificationDetail from "../../components/verificationDetail/vnin";
 import useFetch from "../../hooks/fetch.hook";
 import styles from "../../styles/Main.module.css";
 
@@ -69,47 +71,15 @@ export default function VerificationDetail() {
           )}
         </div>
 
-        <div className="pt-2 pb-5">
-          <img
-            src={data?.data?.photo || avatarNotAvailable}
-            alt="Person"
-            className="h-[200px] w-[200px] rounded-lg"
-          />
-        </div>
-        <div className="py-1">
-          <span className="font-bold">NIN:</span> {data?.data?.nin || "N/A"}
-        </div>
-        <div className="py-1">
-          <span className="font-bold">Tracking ID:</span>{" "}
-          {data?.data?.trackingId || "N/A"}
-        </div>
-        <div className="py-1">
-          <span className="font-bold">Last Name:</span>{" "}
-          {data?.data?.surname || "N/A"}
-        </div>
-
-        <div className="py-1">
-          <span className="font-bold">First Name:</span>{" "}
-          {data?.data?.firstname || "N/A"}
-        </div>
-
-        <div className="py-1">
-          <span className="font-bold">Middle Name:</span>{" "}
-          {data?.data?.middlename || "N/A"}
-        </div>
-
-        <div className="py-1">
-          <span className="font-bold">Date of Birth:</span>{" "}
-          {data?.data?.birthdate || "N/A"}
-        </div>
-        <div className="py-1">
-          <span className="font-bold">Genger:</span>{" "}
-          {data?.data?.gender || "N/A"}
-        </div>
-        <div className="py-1">
-          <span className="font-bold">Phone number:</span>{" "}
-          {data?.data?.telephoneno || "N/A"}
-        </div>
+        {apiData?.channel.startsWith("nin-vnin") ? (
+          <VNINVerificationDetail data={data} />
+        ) : apiData?.channel.startsWith("nin") ? (
+          <NINVerificationDetail data={data} />
+        ) : apiData?.channel.startsWith("bvn") ? (
+          <BVNVerificationDetail data={data} />
+        ) : (
+          <div></div>
+        )}
       </div>
 
       <FooterShortCore />
