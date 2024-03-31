@@ -19,8 +19,9 @@ export default function VerificationDetail() {
     try {
       const response = await axios.get(
         process.env.REACT_APP_SERVER_DOMAIN + `/api/generateCard/${id}`,
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` }, responseType: "blob" }
       );
+
       const blob = new Blob([response.data], { type: "application/pdf" });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
