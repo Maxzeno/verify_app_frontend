@@ -12,6 +12,7 @@ import FooterShortCore from "../../components/FooterShortCore";
 
 import { useTheme } from "@table-library/react-table-library/theme";
 import { useSearchParams } from "react-router-dom";
+import EmptyCard from "../../components/EmptyCard";
 import Pagination from "../../components/pagination";
 import useFetch from "../../hooks/fetch.hook";
 
@@ -108,6 +109,7 @@ export default function PaymentHistory() {
             </>
           )}
         </Table>
+        {(apiData?.data?.length ?? 1) === 0 && <EmptyCard />}
       </div>
 
       <Pagination
