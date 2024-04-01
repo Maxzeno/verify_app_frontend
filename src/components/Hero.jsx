@@ -13,7 +13,7 @@ const Hero = () => {
             Affordable Identity Verification Portal.
           </h1>
           <p className="max-w-sm text-center text-darkGrayishBlue md:text-left">
-            We help you verify your Nation Identity Number, Phone, Demography
+            We help you verify your National Identity Number, Phone, Demography
             and many more with ease.
           </p>
           <div className="flex justify-center md:justify-start">

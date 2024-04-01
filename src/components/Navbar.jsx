@@ -14,7 +14,13 @@ const Navbar = () => {
           to="https://chat.whatsapp.com/EoRESLRZwnz4X0bixDSQuL"
           className="text-indigo-500 hover:text-[#ff6a6a]"
         >
-          <img src={whatsappLogo} alt="Logo" width={50} height={50} />
+          <img
+            className="rounded-lg"
+            src={whatsappLogo}
+            alt="Logo"
+            width={50}
+            height={50}
+          />
         </Link>
       </div>
       {/* Flex Container */}
