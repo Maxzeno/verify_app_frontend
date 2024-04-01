@@ -11,7 +11,8 @@ import {
 import FooterShortCore from "../../components/FooterShortCore";
 
 import { useTheme } from "@table-library/react-table-library/theme";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import Pagination from "../../components/pagination";
 import useFetch from "../../hooks/fetch.hook";
 
 const colorTheme = {
@@ -44,10 +45,13 @@ const marginTheme = {
 };
 
 export default function VerificationHistory() {
+  const [searchParams] = useSearchParams();
+  let page = searchParams.get("page") || 1;
+
   const theme = useTheme([colorTheme, stripedTheme, marginTheme]);
   const token = localStorage.getItem("token");
   const [{ isLoading, apiData, serverError }] = useFetch(
-    "getVerificationsByAuthUser?limit=1000",
+    `getVerificationsByAuthUser?limit=10&page=${page}`,
     { headers: { Authorization: `Bearer ${token}` } }
   );
 
@@ -73,7 +77,7 @@ export default function VerificationHistory() {
     <div>
       <div className="m-4">
         <Table
-          data={{ nodes: apiData ?? [] }}
+          data={{ nodes: apiData?.data ?? [] }}
           theme={theme}
           layout={{ fixedHeader: true }}
         >
@@ -110,6 +114,13 @@ export default function VerificationHistory() {
           )}
         </Table>
       </div>
+
+      <Pagination
+        currentPage={page}
+        path={"/verification-history?page="}
+        itemsPerPage={10}
+        totalItems={apiData?.count ?? 0}
+      />
       <FooterShortCore />
     </div>
   );
