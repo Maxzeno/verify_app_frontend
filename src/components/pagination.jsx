@@ -34,8 +34,8 @@ export default function Pagination({
             <button
               className={`px-4 py-2 mx-1 font-semibold focus:outline-none rounded ${
                 currentPage == 1
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-blue-200"
+                  ? "bg-indigo-500 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-indigo-200"
               }`}
             >
               first
@@ -48,8 +48,8 @@ export default function Pagination({
               <button
                 className={`px-4 py-2 mx-1 font-semibold focus:outline-none rounded ${
                   currentPage == page
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-blue-200"
+                    ? "bg-indigo-500 text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-indigo-200"
                 }`}
               >
                 {page}
@@ -62,8 +62,8 @@ export default function Pagination({
             <button
               className={`px-4 py-2 mx-1 font-semibold focus:outline-none rounded ${
                 currentPage == totalPages
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-blue-200"
+                  ? "bg-indigo-500 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-indigo-200"
               }`}
             >
               last

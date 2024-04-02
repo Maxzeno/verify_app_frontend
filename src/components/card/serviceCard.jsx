@@ -12,7 +12,7 @@ export default function ServiceCard({ title, body, to, soon = false }) {
           <span className="font-thin text-2xl">{title}</span>
           <span className="flex items-center">
             {soon && (
-              <span className="mr-2 bg-blue-500 text-white p-1 rounded-full text-xs">
+              <span className="mr-2 bg-indigo-500 text-white p-1 rounded-full text-xs">
                 soon
               </span>
             )}

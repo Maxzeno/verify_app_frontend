@@ -54,7 +54,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     to="/dashboard"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex ${
                       currentUrl.includes("/dashboard")
-                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        ? "bg-indigo-500 hover:bg-indigo-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
@@ -67,7 +67,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     to="/fund-wallet"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
                       currentUrl.includes("/fund-wallet")
-                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        ? "bg-indigo-500 hover:bg-indigo-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
@@ -81,7 +81,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
                       currentUrl.includes("/verification-history") ||
                       currentUrl.includes("/detail")
-                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        ? "bg-indigo-500 hover:bg-indigo-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
@@ -94,7 +94,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     to="/payment-history"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
                       currentUrl.includes("/payment-history")
-                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        ? "bg-indigo-500 hover:bg-indigo-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
@@ -109,7 +109,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     to="/nin-service"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
                       currentUrl.includes("/nin-service")
-                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        ? "bg-indigo-500 hover:bg-indigo-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
@@ -122,7 +122,7 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     to="/bvn-service"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
                       currentUrl.includes("/bvn-service")
-                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        ? "bg-indigo-500 hover:bg-indigo-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
@@ -135,14 +135,14 @@ export default function NavbarCore({ children, headerName = "Dashboard" }) {
                     to="#"
                     className={`py-3 pl-2 rounded-e-lg my-nav-link-light flex  ${
                       false
-                        ? "bg-blue-500 hover:bg-blue-400 text-white"
+                        ? "bg-indigo-500 hover:bg-indigo-400 text-white"
                         : "hover:bg-gray-200"
                     }`}
                   >
                     <div className="flex items-center justify-between flex-1">
                       <span>Other Services</span>
 
-                      <span className="mr-2 bg-blue-500 text-white p-1 rounded-full text-xs">
+                      <span className="mr-2 bg-indigo-500 text-white p-1 rounded-full text-xs">
                         soon
                       </span>
                     </div>
