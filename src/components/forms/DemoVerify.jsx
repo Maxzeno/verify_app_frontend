@@ -10,7 +10,7 @@ export default function DemoVerify() {
     initialValues: {
       firstname: "",
       lastname: "",
-      gender: "",
+      gender: "male",
       dob: "",
       slipType: "nin-basic",
     },
