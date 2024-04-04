@@ -13,7 +13,7 @@ import Reset from './page/main/Reset.js';
 
 
 /* auth middleware */
-import NavDash from './components/NavDash.jsx';
+import NavDash from './components/NavDash.js';
 import { AuthorizeUser, ProtectRoute, ToDashboardIfAuth } from './middleware/auth.js';
 import BVNService from './page/core/bvnService.jsx';
 import Dashboard from './page/core/Dashboard.js';
