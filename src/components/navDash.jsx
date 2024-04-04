@@ -4,7 +4,7 @@ import companyLogo from "../assets/images/logo-nobg.png";
 import whatsappLogo from "../assets/whatsapp_icon.png";
 import NavDrop from "./NavDrop";
 
-export default function NavbarCore({ children, headerName = "Dashboard" }) {
+export default function NavDash({ children, headerName = "Dashboard" }) {
   const location = useLocation();
   const currentUrl = location.pathname;
 

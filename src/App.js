@@ -13,7 +13,7 @@ import Reset from './page/main/Reset.js';
 
 
 /* auth middleware */
-import NavbarCore from './components/NavDash.jsx';
+import NavDash from './components/NavDash.jsx';
 import { AuthorizeUser, ProtectRoute, ToDashboardIfAuth } from './middleware/auth.js';
 import BVNService from './page/core/bvnService.jsx';
 import Dashboard from './page/core/Dashboard.js';
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
     },
     {
         path : '/profile',
-        element : <AuthorizeUser><NavbarCore headerName='Profile'> <Profile /> </NavbarCore></AuthorizeUser> 
+        element : <AuthorizeUser><NavDash headerName='Profile'> <Profile /> </NavDash></AuthorizeUser> 
     },
     {
         path : '/recovery',
@@ -66,31 +66,31 @@ const router = createBrowserRouter([
     },
     {
         path : '/dashboard',
-        element : <AuthorizeUser><NavbarCore><Dashboard></Dashboard> </NavbarCore></AuthorizeUser> 
+        element : <AuthorizeUser><NavDash><Dashboard></Dashboard> </NavDash></AuthorizeUser> 
     },
     {
         path : '/fund-wallet',
-        element : <AuthorizeUser><NavbarCore headerName='Fund Wallet'><FundWallet></FundWallet> </NavbarCore></AuthorizeUser> 
+        element : <AuthorizeUser><NavDash headerName='Fund Wallet'><FundWallet></FundWallet> </NavDash></AuthorizeUser> 
     },
     {
         path : '/verification-history',
-        element : <AuthorizeUser><NavbarCore headerName='Verification History'><VerificationHistory></VerificationHistory> </NavbarCore></AuthorizeUser> 
+        element : <AuthorizeUser><NavDash headerName='Verification History'><VerificationHistory></VerificationHistory> </NavDash></AuthorizeUser> 
     },
     {
         path : '/payment-history',
-        element : <AuthorizeUser><NavbarCore headerName='Payment History'><PaymentHistory></PaymentHistory> </NavbarCore></AuthorizeUser> 
+        element : <AuthorizeUser><NavDash headerName='Payment History'><PaymentHistory></PaymentHistory> </NavDash></AuthorizeUser> 
     },
     {
         path : '/nin-service',
-        element : <AuthorizeUser><NavbarCore headerName='NIN Service'><NINService></NINService> </NavbarCore></AuthorizeUser> 
+        element : <AuthorizeUser><NavDash headerName='NIN Service'><NINService></NINService> </NavDash></AuthorizeUser> 
     },
     {
         path : '/bvn-service',
-        element : <AuthorizeUser><NavbarCore headerName='BVN Service'><BVNService></BVNService> </NavbarCore></AuthorizeUser> 
+        element : <AuthorizeUser><NavDash headerName='BVN Service'><BVNService></BVNService> </NavDash></AuthorizeUser> 
     },
     {
         path : '/detail/:id',
-        element : <AuthorizeUser><NavbarCore headerName='Detail'><VerificationDetail></VerificationDetail> </NavbarCore></AuthorizeUser> 
+        element : <AuthorizeUser><NavDash headerName='Detail'><VerificationDetail></VerificationDetail> </NavDash></AuthorizeUser> 
     },
     {
         path : '*',
