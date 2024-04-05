@@ -9,7 +9,7 @@ export async function usernameValidate(values) {
         // check user exist or not
         const { status } = await authenticate(values.username);
 
-        if(status != 200) {
+        if(status !== 200) {
             errors.exist = toast.error('User does not exist...!');
         }
     }
@@ -25,7 +25,7 @@ export async function emailValidate(values) {
         // check user exist or not
         const { status } = await authenticate(values.email);
 
-        if(status != 200) {
+        if(status !== 200) {
             errors.exist = toast.error('User does not exist...!');
         }
     }
@@ -44,7 +44,7 @@ export async function passwordValidate(values) {
 export async function resetPasswordValidate(values) {
     const errors = passwordVerify({}, values);
 
-    if( values.password != values.confirm_pwd ) {
+    if( values.password !== values.confirm_pwd ) {
         errors.exist = toast.error("Password does not match...!");
     }
 
@@ -75,7 +75,7 @@ export async function profileValidate(values) {
 /* validate password */
 function passwordVerify(errors={}, values) {
     
-    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    const specialChars = /[`!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
 
     if( !values.password ) {
         errors.password = toast.error("Password Required...!");

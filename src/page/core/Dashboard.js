@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 import FooterShortCore from "../../components/FooterShortCore";
 import DashboardCard from '../../components/card/dashboardCard';
 import ServiceCard from '../../components/card/serviceCard';
@@ -6,6 +7,8 @@ import ServiceCard from '../../components/card/serviceCard';
 export default function Dashboard() {
     return (
         <div>
+            <Toaster position="top-center" reverseOrder={false}></Toaster>
+
             <DashboardCard welcomeText={"Welcome"} />
 
             <div className="font-thin text-3xl pt-10 mx-5">Services</div>

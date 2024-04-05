@@ -32,7 +32,8 @@ export default function Password() {
             toast.promise(sendIt, {
                 loading: 'Loading...!',
                 success: <b>Login Successfully...!</b>,
-                error: (error) => <b>{error.error}</b>
+                error: (error) => <b>{error.error}</b>,
+                 duration: 3000,
             });
 
             sendIt.then((result) => {

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import avatar from '../../assets/profile.png';
-import convertToBase64 from '../../helper/convert.js';
 import { registerUser } from '../../helper/helper.js';
 import { registerValidate } from '../../helper/validate.js';
 
@@ -46,10 +45,10 @@ export default function Register() {
     });
 
     /* formik doesn't support file upload so we need to create this handler */
-    const onUpload = async e => {
-        const base64 = await convertToBase64(e.target.files[0]);
-        setFile(base64);
-    }
+    // const onUpload = async e => {
+    //     const base64 = await convertToBase64(e.target.files[0]);
+    //     setFile(base64);
+    // }
 
     // rendering the register component
     return (

@@ -13,7 +13,7 @@ import extend from '../../styles/Profile.module.css';
 
 export default function Profile() {
 
-    const [file, setFile] = useState();
+    const [file] = useState();
 
     const [ {isLoading, apiData, serverError} ] = useFetch();
 

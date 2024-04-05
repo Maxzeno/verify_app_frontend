@@ -33,7 +33,7 @@ export default function Pagination({
           <Link to={`${path}${1}`}>
             <button
               className={`px-4 py-2 mx-1 font-semibold focus:outline-none rounded ${
-                currentPage == 1
+                currentPage === 1
                   ? "bg-indigo-500 text-white"
                   : "bg-gray-200 text-gray-700 hover:bg-indigo-200"
               }`}
@@ -47,7 +47,7 @@ export default function Pagination({
             <Link to={`${path}${page}`}>
               <button
                 className={`px-4 py-2 mx-1 font-semibold focus:outline-none rounded ${
-                  currentPage == page
+                  currentPage === page
                     ? "bg-indigo-500 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-indigo-200"
                 }`}
@@ -61,7 +61,7 @@ export default function Pagination({
           <Link to={`${path}${totalPages}`}>
             <button
               className={`px-4 py-2 mx-1 font-semibold focus:outline-none rounded ${
-                currentPage == totalPages
+                currentPage === totalPages
                   ? "bg-indigo-500 text-white"
                   : "bg-gray-200 text-gray-700 hover:bg-indigo-200"
               }`}
