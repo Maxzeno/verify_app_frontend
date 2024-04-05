@@ -1,13 +1,11 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { usePaystackPayment } from "react-paystack";
-import { useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/fetch.hook";
 import styles from "../../styles/Main.module.css";
 
 export default function ServicePayment() {
   const [data, setData] = useState("");
-  const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
   const [{ isLoading, apiData, serverError }] = useFetch("getUserAuth", {
