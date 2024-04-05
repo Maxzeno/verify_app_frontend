@@ -20,10 +20,8 @@ import Dashboard from './page/core/Dashboard.js';
 import FundWallet from './page/core/fundWallet.jsx';
 import NINService from './page/core/ninService.jsx';
 import PaymentHistory from './page/core/paymentHistory.jsx';
-import About from './page/main/About.jsx';
 import Email from './page/main/Email.js';
 import Home from './page/main/Home.js';
-import Services from './page/main/Services.jsx';
 
 
 /* root routes */
@@ -32,14 +30,14 @@ const router = createBrowserRouter([
        path : '/',
        element : <ToDashboardIfAuth><Home></Home></ToDashboardIfAuth>
     },
-    {
-       path : '/about',
-       element : <ToDashboardIfAuth><About></About></ToDashboardIfAuth>
-    },
-        {
-       path : '/services',
-       element : <ToDashboardIfAuth><Services></Services></ToDashboardIfAuth>
-    },
+    // {
+    //    path : '/about',
+    //    element : <ToDashboardIfAuth><About></About></ToDashboardIfAuth>
+    // },
+    //     {
+    //    path : '/services',
+    //    element : <ToDashboardIfAuth><Services></Services></ToDashboardIfAuth>
+    // },
     {
        path : '/login',
        element : <ToDashboardIfAuth><Email></Email></ToDashboardIfAuth>
