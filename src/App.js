@@ -31,13 +31,9 @@ const router = createBrowserRouter([
        path : '/',
        element : <ToDashboardIfAuth><Home></Home></ToDashboardIfAuth>
     },
-    // {
-    //    path : '/about',
-    //    element : <ToDashboardIfAuth><About></About></ToDashboardIfAuth>
-    // },
-        {
+    {
        path : '/confirm-email',
-       element : <ToDashboardIfAuth><ConfirmEmail></ConfirmEmail></ToDashboardIfAuth>
+       element : <ToDashboardIfAuth> <ProtectRoute><ConfirmEmail></ConfirmEmail> </ProtectRoute></ToDashboardIfAuth>
     },
     {
        path : '/login',
@@ -57,11 +53,11 @@ const router = createBrowserRouter([
     },
     {
         path : '/recovery',
-        element : <ToDashboardIfAuth><Recovery></Recovery></ToDashboardIfAuth>
+        element : <ToDashboardIfAuth> <ProtectRoute><Recovery></Recovery> </ProtectRoute></ToDashboardIfAuth>
     },
     {
         path : '/reset',
-        element : <ToDashboardIfAuth><Reset></Reset></ToDashboardIfAuth>
+        element : <ToDashboardIfAuth><ProtectRoute> <Reset></Reset> </ProtectRoute></ToDashboardIfAuth>
     },
     {
         path : '/dashboard',

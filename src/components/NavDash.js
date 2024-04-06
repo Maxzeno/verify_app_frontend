@@ -37,7 +37,7 @@ export default function NavDash({ children, headerName = "Dashboard" }) {
         </div>
         <div className="z-10 md:overflow-auto md:grid md:grid-cols-6 lg:grid-cols-5 md:h-screen">
           <div
-            className={`overflow-auto transition-left duration-300 ease-in-out transform bg-white border-r md:col-span-2 lg:col-span-1 z-10 w-[300px] ${
+            className={`z-50 overflow-auto transition-left duration-300 ease-in-out transform bg-white border-r md:col-span-2 lg:col-span-1 z-10 w-[300px] ${
               menuOpen !== true && "left-[-300px]"
             } md:left-0 h-[calc(100vh)] md:relative md:w-auto md:min-w-[auto] fixed text-gray-600 text-base border-r-1 border-gray-300`}
           >
@@ -155,7 +155,7 @@ export default function NavDash({ children, headerName = "Dashboard" }) {
           <div className="overflow-auto md:col-span-4 relative w-auto bg-gray-200">
             <nav className="py-3 bg-white mb-3 border-b border-gray-300">
               <div className="flex justify-between px-5">
-                <div className="font-extrabold text-3xl">{headerName}</div>
+                <div className="font-extrabold text-3xl overflow-hidden whitespace-nowrap overflow-ellipsis">{headerName}</div>
                 <div className="flex">
                   <div>
                     <NavDrop />
