@@ -31,7 +31,7 @@ export default function Recovery() {
         try {
             const { status } = await verifyOTP( { email, code: OTP } );
 
-            if (status === 201) {
+            if (status === 200) {
                 localStorage.setItem('OTP', OTP);
                 toast.success('Verify Successfully!');
                 return navigate('/reset');
