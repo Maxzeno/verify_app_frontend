@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { generateOTP, verifyOTP } from '../../helper/helper.js';
+import { confirmEmail, generateOTP } from '../../helper/helper.js';
 import { useAuthStore } from '../../store/store.js';
 
 import styles from '../../styles/Main.module.css';
 
 
-export default function Recovery() {
+export default function ConfirmEmail() {
 
     const { email } = useAuthStore(state => state.auth);
 
@@ -16,10 +16,13 @@ export default function Recovery() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        generateOTP(email).then((data) => {
+        generateOTP(email, '/api/sendConfirmEmail').then((data) => {
             console.log(data);
             if(data) {
-                return toast.success('OTP has been sent to yout email!');
+                return toast.success('Confirmation code has been sent to yout email!', {
+                 duration: 3000,
+
+                });
             }
             return toast.error('Problem while generating OTP!');
         })
@@ -29,27 +32,30 @@ export default function Recovery() {
         e.preventDefault();
  
         try {
-            const { status } = await verifyOTP( { email, code: OTP } );
+            const { status } = await confirmEmail( { email, code: OTP } );
 
-            if (status === 201) {
-                localStorage.setItem('OTP', OTP);
+            if (status === 200) {
                 toast.success('Verify Successfully!');
-                return navigate('/reset');
+                return navigate('/password');
             }
         } catch (error) {
-            return toast.error(error.error);
+            return toast.error(error.error, {
+                 duration: 3000,
+
+            });
         }
     }
 
     // handler function of resend OTP
     function resendOTP() {
 
-        const sendIt =  generateOTP(email);
+        const sendIt =  generateOTP(email, '/api/sendConfirmEmail');
         
         toast.promise(sendIt, {
             loading: 'Sending...!',
-            success: <b>OTP has been send to your email!</b>,
-            error: (error) => <b>{error.error}</b>
+            success: <b>Email confirmation code has been sent to your email!</b>,
+            error: (error) => <b>{error.error}</b>,
+            duration: 3000,
         });
     }
 
@@ -65,7 +71,7 @@ export default function Recovery() {
                     <div className="title flex flex-col items-center">
                         <h4 className="text-5xl font-bold">Recovery</h4>
                         <span className="py-4 text-xl text-center text-gray-500">
-                            Enter OTP sent to your email
+                            Enter Confirmation code sent to your email
                         </span>
                     </div>
 
@@ -79,12 +85,12 @@ export default function Recovery() {
                                 <input onChange={(e) => setOTP(e.target.value)} className={styles.textbox} type="text" placeholder='OTP'/>
                             </div>
 
-                            <button className={styles.btn} type="submit">Recover</button>
+                            <button className={styles.btn} type="submit">Confirm</button>
                         </div>
                     </form>
 
                     <div className="text-center py-4">
-                        <span className="text-gray-500">Can't get OTP? <button onClick={resendOTP} className="text-red-500"> Resend</button></span>
+                        <span className="text-gray-500">Didn't get it? <button onClick={resendOTP} className="text-red-500"> Resend</button></span>
                     </div>
 
                 </div>
