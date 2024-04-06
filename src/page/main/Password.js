@@ -37,12 +37,15 @@ export default function Password() {
             });
 
             sendIt.then((result) => {
+                console.log(result)
                 const { token } = result.data;
                 localStorage.setItem('token', token);
                 navigate('/dashboard');
                 
             }).catch((err) => {
-                console.log(err)
+                if (err.status === 450) {
+                    navigate('/confirm-email');
+                }
             }); 
         }
     });

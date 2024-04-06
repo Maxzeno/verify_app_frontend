@@ -1,10 +1,9 @@
 import { useFormik } from 'formik';
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { resetPassword } from '../../helper/helper.js';
 import { resetPasswordValidate } from '../../helper/validate.js';
-import useFetch from '../../hooks/fetch.hook.js';
 import { useAuthStore } from '../../store/store.js';
 
 import styles from '../../styles/Main.module.css';
@@ -15,7 +14,7 @@ export default function Reset() {
 
     const navigate = useNavigate();
 
-    const [ { isLoading, status, serverError } ] = useFetch('createResetSession');
+    // const [ { isLoading, status, serverError } ] = useFetch('createResetSession');
 
     const formik = useFormik({
         initialValues : {
@@ -26,8 +25,8 @@ export default function Reset() {
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit: async values => {
-
-            const sendIt =  resetPassword( { email, password: values.password } );
+            const otp = localStorage.getItem("OTP");
+            const sendIt =  resetPassword( { email, password: values.password, otp } );
             
             toast.promise(sendIt, {
                 loading: 'Loading...!',
@@ -44,18 +43,18 @@ export default function Reset() {
         }
     });
 
-    if( isLoading ) {
-        return (<h1 className='text-2xl font-bold'>Loading...</h1>);
-    }
+    // if( isLoading ) {
+    //     return (<h1 className='text-2xl font-bold'>Loading...</h1>);
+    // }
 
-    if (serverError) {
-        toast.error('Request recovery of email before reset!');
-         return <Navigate to={'/login'} replace={true}></Navigate>;
-    }
+    // if (serverError) {
+    //     toast.error('Request recovery of email before reset!');
+    //      return <Navigate to={'/login'} replace={true}></Navigate>;
+    // }
 
-    if( status && status !== 201 ) {
-        return <Navigate to={'/password'} replace={true}></Navigate>;
-    }
+    // if( status && status !== 201 ) {
+    //     return <Navigate to={'/password'} replace={true}></Navigate>;
+    // }
 
     // rendering the reset component
     return (
