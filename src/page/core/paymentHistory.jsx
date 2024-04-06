@@ -76,40 +76,42 @@ export default function PaymentHistory() {
 
   return (
     <div>
-      <div className="m-4">
-        <Table
-          data={{ nodes: apiData?.data ?? [] }}
-          theme={theme}
-          layout={{ fixedHeader: true }}
-        >
-          {(tableList) => (
-            <>
-              <Header>
-                <HeaderRow>
-                  <HeaderCell>S/N</HeaderCell>
-                  <HeaderCell>Amount</HeaderCell>
-                  <HeaderCell>Channel</HeaderCell>
-                  <HeaderCell>Confirmed</HeaderCell>
-                  <HeaderCell>Date</HeaderCell>
-                </HeaderRow>
-              </Header>
+      <div className="overflow-auto">
+        <div className="m-4 min-w-[500px]">
+          <Table
+            data={{ nodes: apiData?.data ?? [] }}
+            theme={theme}
+            layout={{ fixedHeader: true }}
+          >
+            {(tableList) => (
+              <>
+                <Header>
+                  <HeaderRow>
+                    <HeaderCell>S/N</HeaderCell>
+                    <HeaderCell>Amount</HeaderCell>
+                    <HeaderCell>Channel</HeaderCell>
+                    <HeaderCell>Confirmed</HeaderCell>
+                    <HeaderCell>Date</HeaderCell>
+                  </HeaderRow>
+                </Header>
 
-              <Body>
-                {tableList.map((item, index) => (
-                  <Row key={index} item={item}>
-                    <Cell>{index + 1}</Cell>
+                <Body>
+                  {tableList.map((item, index) => (
+                    <Row key={index} item={item}>
+                      <Cell>{index + 1}</Cell>
 
-                    <Cell>{item.amount}</Cell>
-                    <Cell>{item.channel}</Cell>
-                    <Cell>{item.payment_confirmed ? "yes" : "no"}</Cell>
-                    <Cell>{formartDate(item.created_at)}</Cell>
-                  </Row>
-                ))}
-              </Body>
-            </>
-          )}
-        </Table>
-        {(apiData?.data?.length ?? 1) === 0 && <EmptyCard />}
+                      <Cell>{item.amount}</Cell>
+                      <Cell>{item.channel}</Cell>
+                      <Cell>{item.payment_confirmed ? "yes" : "no"}</Cell>
+                      <Cell>{formartDate(item.created_at)}</Cell>
+                    </Row>
+                  ))}
+                </Body>
+              </>
+            )}
+          </Table>
+          {(apiData?.data?.length ?? 1) === 0 && <EmptyCard />}
+        </div>
       </div>
 
       <Pagination

@@ -77,7 +77,6 @@ export async function verifyPassword({ email, password }) {
   try {
     if (email) {
         const { data, status } = await axios.post('/api/login', { email, password });
-        // console.log(data, status )
       return Promise.resolve({ data, status });
     } else {
       return Promise.reject({ error: "Email is required" });

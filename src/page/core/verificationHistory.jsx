@@ -76,45 +76,47 @@ export default function VerificationHistory() {
 
   return (
     <div>
-      <div className="m-4">
-        <Table
-          data={{ nodes: apiData?.data ?? [] }}
-          theme={theme}
-          layout={{ fixedHeader: true }}
-        >
-          {(tableList) => (
-            <>
-              <Header>
-                <HeaderRow>
-                  <HeaderCell>S/N</HeaderCell>
-                  <HeaderCell>Channel</HeaderCell>
-                  <HeaderCell>Slip Type</HeaderCell>
-                  <HeaderCell>Date</HeaderCell>
-                </HeaderRow>
-              </Header>
+      <div className="overflow-auto">
+        <div className="m-4 min-w-[500px]">
+          <Table
+            data={{ nodes: apiData?.data ?? [] }}
+            theme={theme}
+            layout={{ fixedHeader: true }}
+          >
+            {(tableList) => (
+              <>
+                <Header>
+                  <HeaderRow>
+                    <HeaderCell>S/N</HeaderCell>
+                    <HeaderCell>Channel</HeaderCell>
+                    <HeaderCell>Slip Type</HeaderCell>
+                    <HeaderCell>Date</HeaderCell>
+                  </HeaderRow>
+                </Header>
 
-              <Body>
-                {tableList.map((item, index) => (
-                  <Row key={index} item={item}>
-                    <Cell>{index + 1}</Cell>
+                <Body>
+                  {tableList.map((item, index) => (
+                    <Row key={index} item={item}>
+                      <Cell>{index + 1}</Cell>
 
-                    <Cell>
-                      <Link
-                        to={`/detail/${item._id}`}
-                        className="text-blue-700 hover:text-blue-500"
-                      >
-                        {item.channel}
-                      </Link>
-                    </Cell>
-                    <Cell>{item.slipType}</Cell>
-                    <Cell>{formartDate(item.created_at)}</Cell>
-                  </Row>
-                ))}
-              </Body>
-            </>
-          )}
-        </Table>
-        {(apiData?.data?.length ?? 1) === 0 && <EmptyCard />}
+                      <Cell>
+                        <Link
+                          to={`/detail/${item._id}`}
+                          className="text-blue-700 hover:text-blue-500"
+                        >
+                          {item.channel}
+                        </Link>
+                      </Cell>
+                      <Cell>{item.slipType}</Cell>
+                      <Cell>{formartDate(item.created_at)}</Cell>
+                    </Row>
+                  ))}
+                </Body>
+              </>
+            )}
+          </Table>
+          {(apiData?.data?.length ?? 1) === 0 && <EmptyCard />}
+        </div>
       </div>
 
       <Pagination
