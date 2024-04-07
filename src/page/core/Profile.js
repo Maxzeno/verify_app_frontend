@@ -32,8 +32,9 @@ export default function Profile() {
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit: async values => {
-            values = await Object.assign(values, { profile: file || apiData?.profile || '' });
-        
+            // values = await Object.assign(values, { profile: file || apiData?.profile || '' });
+            
+            console.log(values)
             const updatePromise = updateUser(values);
 
             toast.promise(updatePromise, {
