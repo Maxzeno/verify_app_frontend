@@ -44,14 +44,14 @@ export default function NINVerify() {
         } catch (error) {
           console.log(error);
           toast.error("An error occurred", {
-            duration: 20000,
+            duration: 3000,
           });
         }
       } catch (error) {
         console.log(error?.response?.data?.error || "An error occurred");
 
         toast.error(error?.response?.data?.error || "An error occurred", {
-          duration: 20000,
+          duration: 3000,
         });
       }
     },

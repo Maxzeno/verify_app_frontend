@@ -26,7 +26,7 @@ export default function ServicePayment() {
   const onSuccess = (reference) => {
     setData("");
     toast.success("You account will be created within a few minutes", {
-      duration: 20000,
+      duration: 3000,
     });
     console.log(reference);
   };
