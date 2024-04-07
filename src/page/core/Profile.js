@@ -54,10 +54,6 @@ export default function Profile() {
     // }
 
 
-    if( isLoading ) {
-        return (<h1 className='text-2xl font-bold'>Loading...</h1>);
-    }
-
     if(serverError) {
         return (<h1 className='text-xl text-red-500'>{serverError.message}</h1>);
     }
@@ -98,7 +94,7 @@ export default function Profile() {
 
                             <input {...formik.getFieldProps('address')} className={`${styles.textbox_full} col-span-1`} type="text" placeholder='Address'/>
                             </div>
-                            <button className={styles.btn} type="submit">Update</button>
+                            <button className={styles.btn} type="submit" disabled={isLoading}>Update</button>
 
                         </div>
 
