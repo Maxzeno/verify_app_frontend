@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import FooterShortCore from "../../components/FooterShortCore";
+import LoadingCard from "../../components/LoadingCard";
 import BVNVerificationDetail from "../../components/verificationDetail/bvn";
 import NINVerificationDetail from "../../components/verificationDetail/nin";
 import VNINVerificationDetail from "../../components/verificationDetail/vnin";
@@ -39,11 +41,14 @@ export default function VerificationDetail() {
     } catch (error) {
       console.error("Error downloading PDF:", error);
       setDownloading(false);
+      toast.error("An error occurred", {
+        duration: 3000,
+      });
     }
   };
 
   if (isLoading) {
-    return <h1 className="text-2xl font-bold">Loading...</h1>;
+    return <LoadingCard />;
   }
 
   if (serverError) {
@@ -55,6 +60,8 @@ export default function VerificationDetail() {
   return (
     <div>
       <div className="mx-5">
+        <Toaster position="top-center" reverseOrder={false}></Toaster>
+
         <div className="flex justify-between items-center my-5">
           <span className="font-bold text-xl">
             {" "}

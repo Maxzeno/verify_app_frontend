@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import illustrationIntro from "../assets/images/illustration-intro.svg";
+import hero from "../assets/images/hero.png";
 
 const Hero = () => {
   return (
@@ -27,7 +27,7 @@ const Hero = () => {
         </div>
         {/* Image */}
         <div className="md:w-1/2">
-          <img src={illustrationIntro} alt="" />
+          <img src={hero} className="rounded-l-full" alt="" />
         </div>
       </div>
     </section>

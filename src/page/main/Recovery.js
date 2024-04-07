@@ -84,7 +84,7 @@ export default function Recovery() {
                     </form>
 
                     <div className="text-center py-4">
-                        <span className="text-gray-500">Can't get OTP? <button onClick={resendOTP} className="text-red-500"> Resend</button></span>
+                        <span className="text-gray-500">Didn't get OTP? <button onClick={resendOTP} className="text-red-500"> Resend</button></span>
                     </div>
 
                 </div>
