@@ -77,15 +77,16 @@ export default function PhoneVerify() {
               <option value="nin-basic">
                 Basic (₦{NIN_CHARGE} + Slip:Free)
               </option>
-              <option value="nin-basic-id">
-                ID Slip (₦{NIN_CHARGE} + Slip:₦100)
+              <option value="nin-long">
+                Long Slip (₦{NIN_CHARGE} + Slip:Free)
               </option>
+              <option value="nin-id">ID Slip (₦{NIN_CHARGE} + Slip:₦50)</option>
               <option value="nin-premium">
-                Premuim Slip(₦{NIN_CHARGE} + Slip:₦150)
+                Premuim Slip(₦{NIN_CHARGE} + Slip:₦100)
               </option>
-              <option value="nin-customised">
-                Customised Slip (₦{NIN_CHARGE} + Slip:₦100)
-              </option>
+              {/* <option value="nin-customised">
+                Customised Slip (₦{NIN_CHARGE} + Slip:₦150)
+              </option> */}
             </select>
             <button
               className={`${styles.btn_inline_width} mt-5`}
