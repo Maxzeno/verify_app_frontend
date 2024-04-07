@@ -72,11 +72,11 @@ const Navbar = () => {
             About
           </Link>
           <Link
-            to="#services"
+            to="#testimonials"
             onClick={handleClick}
             className="hover:text-darkGrayishBlue py-3 pt-2"
           >
-            Services
+            Testimonials
           </Link>
           <Link to="/login" className="hover:text-darkGrayishBlue py-3 pt-2">
             Signin
