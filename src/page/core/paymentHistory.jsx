@@ -13,6 +13,7 @@ import FooterShortCore from "../../components/FooterShortCore";
 import { useTheme } from "@table-library/react-table-library/theme";
 import { useSearchParams } from "react-router-dom";
 import EmptyCard from "../../components/EmptyCard";
+import LoadingCard from "../../components/LoadingCard";
 import Pagination from "../../components/pagination";
 import useFetch from "../../hooks/fetch.hook";
 
@@ -66,10 +67,6 @@ export default function PaymentHistory() {
     return formattedDate;
   }
 
-  if (isLoading) {
-    return <h1 className="text-2xl font-bold">Loading...</h1>;
-  }
-
   if (serverError) {
     return <h1 className="text-xl text-red-500">{serverError.message}</h1>;
   }
@@ -111,6 +108,7 @@ export default function PaymentHistory() {
             )}
           </Table>
           {(apiData?.data?.length ?? 1) === 0 && <EmptyCard />}
+          {isLoading && <LoadingCard />}
         </div>
       </div>
 

@@ -39,10 +39,6 @@ export default function ServicePayment() {
   console.log(config);
   const initializePayment = usePaystackPayment(config);
 
-  if (isLoading) {
-    return <h1 className="text-2xl font-bold">Loading...</h1>;
-  }
-
   if (serverError) {
     return <h1 className="text-xl text-red-500">{serverError.message}</h1>;
   }
@@ -67,7 +63,12 @@ export default function ServicePayment() {
           />
 
           <button
+            disabled={isLoading}
             onClick={() => {
+              if (isLoading) {
+                return;
+              }
+
               if (apiData) {
                 initializePayment({ onSuccess, onClose, config });
               }

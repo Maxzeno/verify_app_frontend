@@ -6,10 +6,6 @@ export default function DashboardCard({ welcomeText }) {
     headers: { Authorization: `Bearer ${token}` },
   });
 
-  if (isLoading) {
-    return <h1 className="text-2xl font-bold">Loading...</h1>;
-  }
-
   if (serverError) {
     return <h1 className="text-xl text-red-500">{serverError.message}</h1>;
   }
@@ -20,7 +16,7 @@ export default function DashboardCard({ welcomeText }) {
         {welcomeText} {apiData?.username || ""}!
       </div>
       <div className="text-white font-thin text-lg pt-7">
-        Wallet Balance: ₦ {apiData?.accountBalance || 0}
+        Wallet Balance: ₦ {apiData?.accountBalance || "***"}
       </div>
     </div>
   );

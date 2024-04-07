@@ -69,7 +69,7 @@ export default function ConfirmEmail() {
                 <div className={styles.glass}>
 
                     <div className="title flex flex-col items-center">
-                        <h4 className="text-5xl font-bold">Recovery</h4>
+                        <h4 className="text-5xl font-bold">Email Confirmation</h4>
                         <span className="py-4 text-xl text-center text-gray-500">
                             Enter Confirmation code sent to your email
                         </span>

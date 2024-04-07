@@ -50,9 +50,6 @@ export default function Password() {
         }
     });
 
-    if( isLoading ) {
-        return (<h1 className='text-2xl font-bold'>Loading...</h1>);
-    }
 
     if(serverError) {
         return (<h1 className='text-xl text-red-500'>{serverError.message}</h1>);
@@ -81,7 +78,7 @@ export default function Password() {
 
                         <div className="textbox flex flex-col items-center gap-6">
                             <input {...formik.getFieldProps('password')} className={styles.textbox} type="password" placeholder='Password'/>
-                            <button className={styles.btn} type="submit">Sign in</button>
+                            <button className={styles.btn} type="submit" disabled={isLoading}>Sign in</button>
                         </div>
 
                         <div className="text-center py-4">

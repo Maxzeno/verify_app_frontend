@@ -43,9 +43,6 @@ export default function Reset() {
         }
     });
 
-    // if( isLoading ) {
-    //     return (<h1 className='text-2xl font-bold'>Loading...</h1>);
-    // }
 
     // if (serverError) {
     //     toast.error('Request recovery of email before reset!');
