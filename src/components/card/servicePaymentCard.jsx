@@ -75,7 +75,7 @@ export default function ServicePayment() {
             }}
             className={`${styles.btn_inline_width} mt-5`}
           >
-            Pay Online
+            {isLoading ? "Loading..." : "Pay Online"}
           </button>
         </div>
       </div>

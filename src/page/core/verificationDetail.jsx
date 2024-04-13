@@ -39,7 +39,6 @@ export default function VerificationDetail() {
       document.body.removeChild(a);
       setDownloading(false);
     } catch (error) {
-      console.error("Error downloading PDF:", error);
       setDownloading(false);
       toast.error("An error occurred", {
         duration: 3000,
