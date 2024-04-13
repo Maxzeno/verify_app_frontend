@@ -66,7 +66,7 @@ export default function VerificationDetail() {
             {" "}
             {apiData?.channel.toUpperCase() || "N/A"}
           </span>
-          {apiData?.channel.startsWith("nin") && (
+          {apiData?.slipType !== "none" && (
             <button
               disabled={downloading}
               onClick={downloading ? () => {} : downloadPDF}
