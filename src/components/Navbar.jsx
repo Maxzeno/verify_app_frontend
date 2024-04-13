@@ -115,8 +115,12 @@ const Navbar = () => {
               : "absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
           }
         >
-          <Link to="#about">About</Link>
-          <Link to="#testimonials">Services</Link>
+          <Link onClick={handleClick} to="#about">
+            About
+          </Link>
+          <Link onClick={handleClick} to="#testimonials">
+            Testimonials
+          </Link>
           <Link to="/login">Signin</Link>
           <Link to="/register">Register</Link>
         </div>
