@@ -9,7 +9,7 @@ const Features = () => {
           {/* What's Different */}
           <div className="flex flex-col space-y-12 md:w-1/2">
             <h2 className="max-w-md text-4xl font-bold text-center md:text-left">
-              What's different about Verifier?
+              What's different about BetaVerify?
             </h2>
             <p className="max-w-sm text-center text-darkGrayishBlue md:text-left">
               We offer affordable and fast verification of your documentents. We

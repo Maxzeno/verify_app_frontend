@@ -15,7 +15,7 @@ export default function AccountCard() {
       <div className="font-thin text-sm py-4">Bank: UNITED BANK FOR AFRICA</div>
 
       <div className="font-thin text-1xl pt-4  border-t">
-        PLEASE JOIN VERIFIER
+        PLEASE JOIN BETA VERIFY
       </div>
       <div className="font-thin text-1xl pt-2">
         <Link

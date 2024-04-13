@@ -55,7 +55,7 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex justify-center text-white pt-1 pb-1">
-          Copyright © {currentYear} verifier
+          Copyright © {currentYear} BetaVerify
         </div>
       </div>
     </div>
